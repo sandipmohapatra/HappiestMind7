@@ -87,3 +87,27 @@ public static void main(String[] args)
 }
 }
 -------------------------------------------------------------------------------------------------------------------------------
+example-2
+-------------------
+package org.sandip;
+
+public class Secondjava 
+{
+public static void main(String[] args)
+{
+byte a=10;
+short b=20;
+float c=34.23f;
+double d=34.32;
+char e='a';
+String f="apple";
+int g=67;
+long h=765;
+System.out.println("the value of a "+a);
+System.out.println("the value of b "+b);
+System.out.println("the value of c"+c);
+System.out.println("the value of d "+d +"the value of e is "+e);
+System.out.println("the value of f  is "+f +"the value of g is "+g+"the value of h is "+h);
+}
+}
+--------------------------------------------------------
