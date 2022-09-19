@@ -154,6 +154,29 @@ public static void main(String[] args)
 }
 }
 ----------------------------------------------------------------------------
+example-5
+-----------------------
+package org.sandip;
+import java.lang.*; 
+import java.util.*;
+public class Third
+{
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 5 nos");
+	float a=ob.nextFloat();
+	float b=ob.nextFloat();
+	float c=ob.nextFloat();
+	float d=ob.nextFloat();
+	float e=ob.nextFloat();
+	
+	System.out.println("the sum of 5 nos is :"+(a+b+c+d+e));
+	System.out.println("the avg of 5 nos is :"+(a+b+c+d+e)/5);
+	
+}
+}
+--------------------------------------------------------------------------
 
 
 
