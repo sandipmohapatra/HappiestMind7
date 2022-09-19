@@ -11,7 +11,14 @@ ii)object :- it is a reference pointer to a class.With object we can access the 
 
 iii)inheritance :- It is used to reuse the existing code.java supports single inheritance.(multi-level,hirarcal).
 when one object acquires all the properties and behaviours of a parent object it is known as Inheritance.
+we have five types of inheritance
+1)single is supported by java.
+2)multi-level is supported by java. 
+3)hyrarchal is supported by java.
+4)mutiple is not supported by java
+5)hybrid is not supported by java.
 
+*in place of multiple and hybrid java use interface .
 iv)polymerphisim:- poly means many ,merphisim means forms.
 In this we have run time polymerphisim and we have compile time polymerphisim.
 
@@ -64,4 +71,19 @@ secondary data type (derive data type)
 ----------------------------------------------------
 1)String
 2)array
+3)class
 ----------------------------
+example-1
+-----------------------
+//class name should start with capital letters.it should start with number.
+package org.sandip;
+
+public class Firstjava 
+{
+public static void main(String[] args) 
+{
+	int a=10,b=20,c=a+b;
+	System.out.println("the sum of 2 nos is "+c);
+}
+}
+-------------------------------------------------------------------------------------------------------------------------------
