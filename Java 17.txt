@@ -177,6 +177,79 @@ public static void main(String[] args)
 }
 }
 --------------------------------------------------------------------------
+example-6
+------------------
+package org.sandip;
+public class Third
+{
+public static void main(String x[])
+//main is a method from which the program start executing.the compiler checks for the exact words
+{
+	String a=x[0];
+	String b=x[1];
+	String c=x[2];
+	String d=x[3];
+	System.out.println("the a value is "+a);
+	System.out.println("the b value is "+b);
+	System.out.println("the c value is "+c);
+	System.out.println("the d value is "+d);
+	}
+}
+---------------------------------------------------------------------
+example-7
+-------------------
+package org.sandip;
+public class Third
+{
+public static void main(String x[])
+//main is a method from which the program start executing.the compiler checks for the exact words
+{
+	String a=x[0];
+	String b=x[1];
+	String c=x[2];
+	String d=x[3];
+	int sum=Integer.parseInt(a)+Integer.parseInt(b)+Integer.parseInt(c)+Integer.parseInt(d);
+		System.out.println("the  sum is "+sum);
+		//Integer.parseInt(a) :- convert the string value to integer. 
+}
+}
+---------------------------------------------------------------------------------------------
+*public static void main(String x[]) :compiler checks for the exact method.
+-------------------------------------------------------------------------------------------------
+example-8
+------------------------------------
+package org.sandip;
+public class Third
+{
+public static void main(String ...x)//jdk1.8
+//main is a method from which the program start executing.the compiler checks for the exact words
+{
+	String a=x[0];
+	String b=x[1];
+	String c=x[2];
+	String d=x[3];
+	int sum=Integer.parseInt(a)+Integer.parseInt(b)+Integer.parseInt(c)+Integer.parseInt(d);
+		System.out.println("the  sum is "+sum);
+		//Integer.parseInt(a) :- convert the string value to integer. 
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
