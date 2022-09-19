@@ -111,3 +111,57 @@ System.out.println("the value of f  is "+f +"the value of g is "+g+"the value of
 }
 }
 --------------------------------------------------------
+example-3
+--------------------
+package org.sandip;
+import java.lang.*; //default packages in java 
+import java.util.*;//a package in java
+public class Third
+{
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);//it will take input from the user.
+	System.out.println("enter 2 nos");
+	int a=ob.nextInt();//accept int value as input
+	int b=ob.nextInt();
+	int c=a+b;
+	System.out.println("the sum of 2 nos is"+c);
+}
+}
+--------------------------------------------------------------------------
+wap to enter 5 nos and find sum and average
+---------------------------------------------------------
+example-4
+-----------------
+package org.sandip;
+import java.lang.*; 
+import java.util.*;
+public class Third
+{
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 5 nos");
+	int a=ob.nextInt();
+	int b=ob.nextInt();
+	int c=ob.nextInt();
+	int d=ob.nextInt();
+	int e=ob.nextInt();
+	
+	System.out.println("the sum of 5 nos is :"+(a+b+c+d+e));
+	System.out.println("the avg of 5 nos is :"+(a+b+c+d+e)/5);
+	
+}
+}
+----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
