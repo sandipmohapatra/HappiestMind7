@@ -159,7 +159,7 @@ example-5
 package org.sandip;
 import java.lang.*; 
 import java.util.*;
-public class Third
+public class Fourth
 {
 public static void main(String[] args) 
 {
@@ -234,10 +234,101 @@ public static void main(String ...x)//jdk1.8
 }
 }
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+JVM (Java Virtual Machine) is an abstract machine. It is called a virtual machine because it doesn't physically exist. It is a specification that provides a runtime environment in which Java bytecode can be executed. It can also run those programs which are written in other languages and compiled to Java bytecode.
 
+JVMs are available for many hardware and software platforms. JVM, JRE, and JDK are platform dependent because the configuration of each OS is different from each other. However, Java is platform independent. There are three notions of the JVM: specification, implementation, and instance.
 
+The JVM performs the following main tasks:
 
+Loads code
+Verifies code
+Executes code
+Provides runtime environment
+-------------------------------------------------------------------------------------------------------------------------------------------------
+JRE is an acronym for Java Runtime Environment. It is also written as Java RTE. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+-------------------------------------------------------------------------------------------------------------------------------------
+JDK is an acronym for Java Development Kit. The Java Development Kit (JDK) is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools.
 
+JDK is an implementation of any one of the below given Java Platforms released by Oracle Corporation:
+
+Standard Edition Java Platform
+Enterprise Edition Java Platform
+Micro Edition Java Platform
+---------------------------------------------------------------------------------------------------------------------
+Memory Management in Java
+In Java, memory management is the process of allocation and de-allocation of objects, called Memory management. Java does memory management automatically. Java uses an automatic memory management system called a garbage collector. Thus, we are not required to implement memory management logic in our application. Java memory management divides into two major parts:
+
+JVM Memory Structure
+Working of the Garbage Collector
+--------------------------------------------------------------------------------------------------
+JVM Memory Structure
+JVM creates various run time data areas in a heap. These areas are used during the program execution. The memory areas are destroyed when JVM exits, whereas the data areas are destroyed when the thread exits.
+--------------------------------------------------------------------------------------------------------------------
+Method Area
+Method Area is a part of the heap memory which is shared among all the threads. It creates when the JVM starts up. It is used to store class structure, superclass name, interface name, and constructors.
+-------------------------------------------------------------------------------------------------------------------------------------
+Heap Area
+Heap stores the actual objects. It creates when the JVM starts up. The user can control the heap if needed. It can be of fixed or dynamic size. When you use a new keyword, the JVM creates an instance for the object in a heap. While the reference of that object stores in the stack. There exists only one heap for each running JVM process. When heap becomes full, the garbage is collected.
+-------------------------------------------------------------------------------------------------------------------------
+Stack Area
+Stack Area generates when a thread creates. It can be of either fixed or dynamic size. The stack memory is allocated per thread. It is used to store data and partial results. It contains references to heap objects. It also holds the value itself rather than a reference to an object from the heap. The variables which are stored in the stack have certain visibility, called scope.
+---------------------------------------------------------------------------------------------------------------
+ClassLoader: ClassLoader is a subsystem used to load class files. ClassLoader first loads the Java code whenever we run it.
+--------------------------------------------------------------------------------------------------------------------------
+Class Method Area: In the memory, there is an area where the class data is stored during the code's execution. Class method area holds the information of static variables, static methods, static blocks, and instance methods.
+--------------------------------------------------------------------------------------------------------------
+Heap: The heap area is a part of the JVM memory and is created when the JVM starts up. Its size cannot be static because it increase or decrease during the application runs.
+----------------------------------------------------------------------------------------------------
+Stack: It is also referred to as thread stack. It is created for a single execution thread. The thread uses this area to store the elements like the partial result, local variable, data used for calling method and returns etc.
+-------------------------------------------------------------------------------------------------
+Native Stack: It contains the information of all the native methods used in our application.
+----------------------------------------------------------------------------------------------------------------
+Execution Engine: It is the central part of the JVM. Its main task is to execute the byte code and execute the Java classes. The execution engine has three main components used for executing Java classes.
+------------------------------------------------------------------------------------------------------------------
+Interpreter: It converts the byte code into native code and executes. It sequentially executes the code. The interpreter interprets continuously and even the same method multiple times. This reduces the performance of the system, and to solve this, the JIT compiler is introduced.
+-------------------------------------------------------------------------------------------------------------------------------
+JIT Compiler: JIT compiler is introduced to remove the drawback of the interpreter. It increases the speed of execution and improves performance.
+------------------------------------------------------------------------------------------------------
+Garbage Collector: The garbage collector is used to manage the memory, and it is a program written in Java. It works in two phases, i.e., Mark and Sweep. Mark is an area where the garbage collector identifies the used and unused chunks of memory. The Sweep removes the identified object from the Mark
+Java Native Interface
+
+Java Native Interface works as a mediator between Java method calls and native libraries.
+
+Java Runtime Environment
+It provides an environment in which Java programs are executed. JRE takes our Java code, integrates it with the required libraries, and then starts the JVM to execute it. To learn more about the Java Runtime Environment, click here.
+---------------------------------------------------------------------------------------------------------------------------------------------
+Conditional statement
+--------------------------------------
+1)if-----else
+2)if-----else if----else if-----else
+---------------------------------------------------
+example-8
+---------------------
+package org.tuesday;
+import java.util.*;
+public class First 
+{
+public static void main(String[] args)
+{
+Scanner ob=new Scanner(System.in);//to will take input from the keyboard
+System.out.println("enter 2 nos");
+int a=ob.nextInt();
+int b=ob.nextInt();
+if(a>b)
+{
+	System.out.println("The greatest is "+a);
+	System.out.println("greatest is "+a);
+}
+else
+{
+	System.out.println("The greatest is "+b);
+	System.out.println(" greatest is "+b);
+	
+}
+}
+}
+-------------------------------------------------------------------
 
 
 
