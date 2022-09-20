@@ -383,7 +383,39 @@ if average greater than 50 print ("third division")
 else 
 fail
 -------------------------------------------------------------------------------------
-
+example-10
+---------------------
+package org.tuesday;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)
+{
+int rollno,m1,m2,m3;
+String name,address;
+Scanner ob=new Scanner(System.in);//to will take input from the keyboard
+System.out.println("enter rollno,name,address,m1,m2,m3");
+rollno=ob.nextInt();
+name=ob.next();
+address=ob.next();
+m1=ob.nextInt();
+m2=ob.nextInt();
+m3=ob.nextInt();
+int sum=m1+m2+m3;
+int avg=sum/3;
+System.out.println("Rollno is: "+rollno +"Name is :"+name+"The address is:"+address);
+System.out.println("Sum is: "+sum+"The average is :"+avg);
+if(avg>=70)
+	System.out.println("First Division");
+else if(avg>=60)
+	System.out.println("Second Division");
+else if(avg>=50)
+	System.out.println("Third Division");
+else
+	System.out.println("Fail");
+}
+}
+-----------------------------------------------------------------------------------------------------
 
 
 
