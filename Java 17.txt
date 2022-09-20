@@ -367,6 +367,38 @@ Scanner is a class belong to util package.
 
 System is a class which belong to lang package.
 ---------------------------------------------------------------------------
+package---->classes---->function/methods()
+----------------------------------------------------------------
+set path=C:\Program Files\Java\jdk-17.0.3.1\bin;.;
+--------------------------------------------------------------------
+javap java.lang.String
+javap java.util.Scanner
+--------------------------------------------------------
+wap to enter a student's data
+rollno,name,address and 3 subjects marks(m1,m2,m3)
+find sum and average.
+if average greater than 70 print ("first division")
+if average greater than 60 print ("second division")
+if average greater than 50 print ("third division")
+else 
+fail
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
