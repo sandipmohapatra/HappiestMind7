@@ -447,7 +447,51 @@ else
 }
 }
 ----------------------------------------------------------------------------------
+Case and Switch
+---------------------------------------
+In this we have a value given to the switch.The switch will jump to the particular case execute it and terminate.
 
+switch(2)
+{
+case 1:
+	break;
+case 2:
+	break;
+default:
+}
+
+----------------------------------------------------------------------------------
+example-11
+----------------------
+package org.tuesday;
+import java.util.*;
+public class Second 
+{
+public static void main(String[] args)
+{
+Scanner ob=new Scanner(System.in);
+System.out.println("enter a no");
+int x=ob.nextInt();
+switch(x)
+{
+case 1:System.out.println("one");
+break;
+case 2:System.out.println("two");
+break;
+case 3:System.out.println("three");
+break;
+case 4:System.out.println("four");
+break;
+case 5:System.out.println("five");
+break;
+default:
+System.out.println("wrong input");
+}
+
+	}
+}
+-----------------------------------------------------------------------
+ 
 
 
 
