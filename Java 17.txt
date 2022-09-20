@@ -641,8 +641,6 @@ class Second
 	c[i][j]=a[i][j]+b[i][j];		
 	}		}
 	
-	
-	
 	System.out.println("the 3*3 matrix is");
 	for(int i=0;i<3;i++)
 	{
@@ -654,6 +652,49 @@ class Second
 		}
 	}}
 -----------------------------------------------------------------------------------------------------------
+example-16
+-----------------------
+package org.tuesday;
+import java.util.*;
+class Second
+{
+	int rollno;//intance variable can be accessed through out the class
+	String name,address;
+	void input()
+	{
+	int x=10;//local variable can be accessed within the method	
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter rollno,name,address");
+		rollno=ob.nextInt();
+		name=ob.next();
+		address=ob.next();
+	}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+public static void main(String[] args) 
+{
+Second ob=new Second();
+//Second is the class name,ob is the object or ref pointer,new is keyword which will create a memory block,Second() is a constructor
+ob.input(); //with the object we can access variables and methods of a class.
+ob.display();
+System.out.println(ob.rollno);
+System.out.println(ob.name);
+System.out.println(ob.address);
+}
+}
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 
