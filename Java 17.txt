@@ -491,7 +491,52 @@ System.out.println("wrong input");
 	}
 }
 -----------------------------------------------------------------------
- 
+ Bank
+---------------
+enter accno,name,initial balance=5000.
+we have 2 options deposite and withdraw .(case and switch)
+after withdraw the minimal balance should be greater or equal to1000.
+finally display the accno,name,final balance.
+-------------------------------------------------------------------
+example-12
+--------------------
+package org.tuesday;
+import java.util.*;
+public class Second 
+{
+public static void main(String[] args)
+{
+Scanner ob=new Scanner(System.in);
+int accno,ibal,fbal;
+String name,choice;
+System.out.println("enter your accno,name ,ibal and choice");
+accno=ob.nextInt();
+name=ob.next();
+ibal=ob.nextInt();
+choice=ob.next();
+switch(choice)
+{
+case "deposite":System.out.println("enter amount to deposite");
+int dep=ob.nextInt();
+fbal=ibal+dep;
+System.out.println("The final balance is "+fbal);
+break;
+case "withdraw":System.out.println("enter amount to withdraw");
+int wdraw=ob.nextInt();
+if(ibal-wdraw>=1000)
+{
+	fbal=ibal-wdraw;
+	System.out.println("The final balance is "+fbal);
+}
+else
+{
+	System.out.println("The balance is low you cannot withdraw it");
+}
+break;
+default:System.out.println("wrong input");
+}
+}}
+---------------------------------------------------------------------------------------------------------------
 
 
 
