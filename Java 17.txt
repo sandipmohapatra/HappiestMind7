@@ -329,6 +329,59 @@ else
 }
 }
 -------------------------------------------------------------------
+example-9
+-----------------------
+package org.tuesday;
+import java.util.*;
+public class First 
+{
+public static void main(String[] args)
+{
+Scanner ob=new Scanner(System.in);//to will take input from the keyboard
+System.out.println("enter 3 nos");
+int a=ob.nextInt();
+int b=ob.nextInt();
+int c=ob.nextInt();
+if(a>b && a>c)
+	System.out.println("The greatest is "+a);
+	else if(b>a && b>c)
+	System.out.println("The greatest is "+b);
+	else
+		System.out.println("The greatest is "+c);
+	}
+}
+----------------------------------------------------------------------------------------
+System.in :- System is a class and in is a object.
+System.out.println() :- System is a class ,out is an object and println() is a method.
+-------------------------------------------------------------------------------
+The predefined class in java will start with capital letter.
+------------------------------------------------------------------------------
+First ob=new First();
+--->First is a class.
+--->First() is a construstor.
+
+Scanner ob=new Scanner(System.in);
+
+System.in is a parameter.
+Scanner is a class belong to util package. 
+
+System is a class which belong to lang package.
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
