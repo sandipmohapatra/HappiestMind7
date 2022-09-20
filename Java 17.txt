@@ -516,11 +516,13 @@ ibal=ob.nextInt();
 choice=ob.next();
 switch(choice)
 {
+
 case "deposite":System.out.println("enter amount to deposite");
 int dep=ob.nextInt();
 fbal=ibal+dep;
 System.out.println("The final balance is "+fbal);
 break;
+
 case "withdraw":System.out.println("enter amount to withdraw");
 int wdraw=ob.nextInt();
 if(ibal-wdraw>=1000)
@@ -537,9 +539,42 @@ default:System.out.println("wrong input");
 }
 }}
 ---------------------------------------------------------------------------------------------------------------
-
-
-
+Array :- it is a collection of similar data type.The array index start from 0.The memory size is fixed at the begining.
+int array,float array......
+----------------------------------------------------------------
+new is a keyword used to create memory blocks.
+---------------------------------------------------------------------
+example-13
+-------------------------------------------
+package org.tuesday;
+import java.util.*;
+class Second
+{
+	public static void main(String[] args) 
+	{
+		Scanner ob=new Scanner(System.in);
+	int a[]=new int[5];
+	String b[]=new String[5];
+	
+	System.out.println("enter 5 nos");
+	for(int i=0;i<5;i++)
+	a[i]=ob.nextInt();
+	
+	System.out.println("enter 5 string");
+	for(int i=0;i<5;i++)
+	b[i]=ob.next();
+	
+	System.out.println("the 5 nos are");
+	for(int i=0;i<5;i++)
+		System.out.println(a[i]);
+	
+	System.out.println("the 5 strings are");
+	for(int i=0;i<5;i++)
+		System.out.println(b[i]);
+		
+	}
+}
+-----------------------------------------------------------------------------------------
 
 
 
