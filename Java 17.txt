@@ -416,6 +416,37 @@ else
 }
 }
 -----------------------------------------------------------------------------------------------------
+package org.tuesday;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)
+{
+String rollno,m1,m2,m3;
+String name,address;
+Scanner ob=new Scanner(System.in);//to will take input from the keyboard
+System.out.println("enter rollno,name,address,m1,m2,m3");
+rollno=ob.nextLine();
+name=ob.nextLine();
+address=ob.nextLine();
+m1=ob.nextLine();
+m2=ob.nextLine();
+m3=ob.nextLine();
+int sum=Integer.parseInt(m1)+Integer.parseInt(m2)+Integer.parseInt(m3);
+int avg=sum/3;
+System.out.println("Rollno is: "+rollno +"Name is :"+name+"The address is:"+address);
+System.out.println("Sum is: "+sum+"The average is :"+avg);
+if(avg>=70)
+	System.out.println("First Division");
+else if(avg>=60)
+	System.out.println("Second Division");
+else if(avg>=50)
+	System.out.println("Third Division");
+else
+	System.out.println("Fail");
+}
+}
+----------------------------------------------------------------------------------
 
 
 
