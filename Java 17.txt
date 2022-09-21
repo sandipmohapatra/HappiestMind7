@@ -785,13 +785,100 @@ for(int i=0;i<x;i++)
 if(z==0)
 System.out.println("data not found");
 }}
-//-------------------------------------------------------------
+//---------------------------------------------------------------------
 //bank customer:- accno,name,balance
 //enter the accno to see particular customer details... 
 //---------------------------------------------------------------------
 
+constructor:- constructor is a function which has the same name of that of the class name.
+it doesnot have return type nor it returns any value.
+a constructor excute automatically when an object is created for the class.
+There are 2 types of contructor 
+1)default constructor
+2)parameterized constructor
+------------------------------------------
+example-19
+-------------------
+package org.wednesday;
 
+public class ConstructorDemo 
+{
+int rollno; //intance variable
+String name,address;
+ConstructorDemo()
+{
+	System.out.println("default constructor");
+}
+ConstructorDemo(int rollno,String name,String address)//local variables
+{
+	//to distingush between local and instance variable we use this keyword
+	this.rollno=rollno;
+	this.name=name;
+	this.address=address;
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+public static void main(String[] args) 
+{
+	ConstructorDemo ob=new ConstructorDemo();
+	ConstructorDemo ob1=new ConstructorDemo(1,"sandip","Bangalore");
+	ob1.display();
+	ConstructorDemo ob2=new ConstructorDemo(2,"kiran","Bangalore");
+	ob2.display();
+}
+}
+---------------------------------------------------------------------
+example-20
+----------------------
+package org.wednesday;
 
+public class ConstructorDemo 
+{
+int rollno; //intance variable
+String name,address;
+ConstructorDemo()
+{
+	System.out.println("default constructor");
+}
+ConstructorDemo(int rollno,String name,String address)//local variables
+{
+	//to distingush between local and instance variable we use this keyword
+	this.rollno=rollno;
+	this.name=name;
+	this.address=address;
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+int sum(int a,int b)   //return type is int
+{
+	return a+b;
+}
+float sum(float a,float b)  //return type is float
+{
+	return a+b;
+}
+public static void main(String[] args) 
+{
+	ConstructorDemo ob=new ConstructorDemo();
+	ConstructorDemo ob1=new ConstructorDemo(1,"sandip","Bangalore");
+	ob1.display();
+	ConstructorDemo ob2=new ConstructorDemo(2,"kiran","Bangalore");
+	ob2.display();
+	
+	System.out.println("the sum of 2 nos are "+ob.sum(13, 34));
+	System.out.println("the sum of 2 nos are "+ob.sum(13.4f, 34.7f));
+	System.out.println("the sum of 2 nos are "+ob.sum(133, 134));
+}
+}
+--------------------------------------------------------------------
 
 
 
