@@ -886,7 +886,57 @@ if you are using the same function name with different return type and datatypes
 It is also known as compile time poly-merphisim.
 The compiler will deside where to send the parameters.
 ------------------------------------------------------------------------------------------------------------
+package org.wednesday;
 
+public class ConstructorDemo 
+{
+int rollno; //intance variable
+String name,address;
+ConstructorDemo()
+{
+	System.out.println("default constructor");
+}
+ConstructorDemo(int r,String n,String a)//local variables
+{
+	//to distingush between local and instance variable we use this keyword
+	rollno=r;
+	name=n;
+	address=a;
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+int sum(int a,int b)   //return type is int
+{
+	return a+b;
+}
+float sum(float a,float b)  //return type is float
+{
+	return a+b;
+}
+int sum(int a,int b,int c)
+{
+	return a+b+c;
+}
+
+public static void main(String[] args) 
+{
+	ConstructorDemo ob=new ConstructorDemo();
+	ConstructorDemo ob1=new ConstructorDemo(1,"sandip","Bangalore");
+	ob1.display();
+	ConstructorDemo ob2=new ConstructorDemo(2,"kiran","Bangalore");
+	ob2.display();
+	
+	System.out.println("the sum of 2 nos are "+ob.sum(13, 34));
+	System.out.println("the sum of 2 nos are "+ob.sum(13.4f, 34.7f));
+	System.out.println("the sum of 2 nos are "+ob.sum(133, 134));
+	System.out.println("the sum of 2 nos are "+ob.sum(13,14,15));
+	}
+}
+------------------------------------------------------------------------------------------
 
 
 
