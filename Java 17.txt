@@ -1040,6 +1040,40 @@ public class ConstructorDemo
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------	
+Inheritance
+---------------------
+1)It is used to reuse the existing code.
+example:- (jkd1.1,jdk1.2,jdk1.3,..........jdk18).
+2)java support single inheritance .
+i)single inheritance
+ii)multi-level inheritance
+iii)hyrarchal inheritance.
+3)It makes the program tight coupled.
+4)we use the keyword (super)---- to access the parent class variables and methods into the child class.
+we use the keyword (extends)----to inheritate the parent class into the child class.
+ 5)we will create object for the child class only and can access the parent class variables and methods.
+------------------------------------------------------
+example-23
+---------------------
+package org.wednesday;
+public class Student 
+{
+int rollno;
+String name,address;
+public Student(int rollno, String name, String address) 
+{
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno);
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	}
+}
+------------------------------------------------------------------------------------------------
 	
 	
 	
