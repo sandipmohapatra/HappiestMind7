@@ -1110,7 +1110,84 @@ public static void main(String[] args)
 }
 }
 ----------------------------------------------------------------------------------------------------
+wap to create a bank class -----accno,name,balance
+create a transaction class extends bank class -----withdraw,deposite
+and display the final balance.
+----------------------------------------------------------------------------------------------
+Example-24
+-------------------
+package org.wednesday;
+
+public class Bank 
+{
+int accno,bal;
+String name;
+public Bank(int accno, int bal, String name) 
+{
+	this.accno = accno;
+	this.bal = bal;
+	this.name = name;
+}
+void display()
+{
+	System.out.println("the accno is :"+accno+ "the name is "+name +"the bal is "+bal);
+}
+}
+----------------------------------------------------------------
+package org.wednesday;
+import java.util.*;
+public class Transaction extends Bank 
+{
+	public Transaction(int accno, int bal, String name) 
+	{
+		super(accno, bal, name);
+	}
+void withDraw()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter the amount to withdraw");
+	int wdraw=ob.nextInt();
+	if(bal-1000>=wdraw)
+	{
+		int fbal=bal-wdraw;
+		System.out.println("the remaining balance is "+fbal);
+	}
+	else 
+	{
+		System.out.println("invalid input");
+	}
 	
+}
+void deposite()
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter the amount to deposite ");
+	int dep=ob.nextInt();
+	System.out.println("the final balance is "+(bal=bal+dep));
+}
+public static void main(String[] args) 
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter accno,name,initial balance");
+	int acc=ob.nextInt();
+	String name=ob.next();
+	int ibal=ob.nextInt();
+	Transaction ob1=new Transaction(acc,ibal,name);
+ob1.display();
+System.out.println("enter your choice");
+
+String choice=ob.next();
+if(choice.equals("withdraw"))
+{
+	ob1.withDraw();
+}
+else
+{
+	ob1.deposite();
+}
+}
+}
+------------------------------------------------------------------------------------------------------
 	
 
 
