@@ -981,7 +981,67 @@ public class ConstructorDemo
 	
 	}
 }
-----------------------------------------------------------------------------------------------------------------------------	
+----------------------------------------------------------------------------------------------------------------------------
+example-22
+-----------------
+package org.wednesday;
+import java.util.*;
+public class ConstructorDemo 
+{
+	int empno,salary;
+	String name,design;
+	
+	public ConstructorDemo()
+	{
+	System.out.println("default constructor");
+	}
+
+	public ConstructorDemo(int empno, int salary, String name, String design) 
+	{
+		
+		this.empno = empno;
+		this.salary = salary;
+		this.name = name;
+		this.design = design;
+	}
+	
+	void display()
+	{
+		System.out.println("the empno is "+empno);
+		System.out.println("the name is "+name);
+		System.out.println("the salary is "+salary);
+		System.out.println("the design is "+design);
+		}
+	public static void main(String[] args) 
+	{
+		ConstructorDemo[] x=new ConstructorDemo[3];
+		for(int i=0;i<3;i++)
+		{
+			Scanner ob=new Scanner(System.in);
+			System.out.println("enter empno,salary,name,designation");
+			int e=ob.nextInt();
+			int s=ob.nextInt();
+			String n=ob.next();
+			String d=ob.next();
+			x[i]=new ConstructorDemo(e,s,n,d);
+		}
+		for(int i=0;i<3;i++)
+		{
+		x[i].display();
+		}
+		
+		ConstructorDemo ob1=new ConstructorDemo(101,67000,"sandip","Developer");
+		ob1.display();
+		ConstructorDemo ob2=new ConstructorDemo(102,167000,"kiran","Developer");
+		ob2.display();
+		ConstructorDemo ob3=new ConstructorDemo(103,267000,"madhu","Developer");
+		ob3.display();
+	
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------	
+	
+	
 	
 
 
