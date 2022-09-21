@@ -1188,8 +1188,54 @@ else
 }
 }
 ------------------------------------------------------------------------------------------------------
-	
+encapsulation :-This will protect the data from been accesed by other class.We use the access specifier private to make the data protected.
+---------------------------------------------------------------------------------------------------------
+data abtraction:-hiding the complexcity and displaying the simplicity is known as data abstraction.
+within class we have methods .within the methods we have complex algorithim  .but outside the class in the main we create object and access the methods.
+------------------------------------------------------------------------------------------------------------------------
+example-25
+------------------------
+package org.wednesday;
+public class Employee 
+{
+private int empno;
+private String name,address;
+public int getEmpno() {
+	return empno;
+}
+public void setEmpno(int empno) {
+	this.empno = empno;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+}
+--------------------------------------------------------------------
+package org.wednesday;
 
+public class EmpDetails
+{
+public static void main(String[] args)
+{
+Employee ob=new Employee();
+ob.setEmpno(101);
+ob.setName("sandip");
+ob.setAddress("Bangalore");
+System.out.println("the empno is "+ob.getEmpno());
+System.out.println("the empname is "+ob.getName());
+System.out.println("the empaddress is "+ob.getAddress());
+}
+}
+-------------------------------------------------------------------------------------------
 
 
 
