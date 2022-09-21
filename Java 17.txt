@@ -879,6 +879,13 @@ public static void main(String[] args)
 }
 }
 --------------------------------------------------------------------
+function/method :-
+They can have any name other than the class name.It return a value and has return type.
+if it doesnot return any value we use the keyword void.
+if you are using the same function name with different return type and datatypes of the parameters are different then it is known as function overloading .
+It is also known as compile time poly-merphisim.
+The compiler will deside where to send the parameters.
+------------------------------------------------------------------------------------------------------------
 
 
 
