@@ -1451,6 +1451,31 @@ increment();
 -------------------------------------------------------------------------------------------------------------
 final:-
 ----------------
+we can declare a class a final.variable as final and method as final.
+If we declare class as final we cannot extend/inherite it.
+If we declare a variable as final we have to assign it and it cannot be changed.
+If we declare method as final we cannot override it.
+final means it cannot be changed.It is used for security reasons.
+-----------------------------------------------------------------------
+example-27
+-------------------
+package org.thursday;
+
+public final class Finaldemo 
+{
+final int a=10;
+final void display()
+{
+	System.out.println("this is a final method");
+}
+public static void main(String[] args) 
+{
+Finaldemo fd=new Finaldemo();
+System.out.println("the value of a is "+fd.a);
+fd.display();
+}
+}
+--------------------------------------------------------------------------------------------------------
 abstract-------
 --------------------
 Interface------
