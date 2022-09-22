@@ -1236,9 +1236,81 @@ System.out.println("the empaddress is "+ob.getAddress());
 }
 }
 -------------------------------------------------------------------------------------------
+wrapper class
+----------------------
+All datatypes in java are also classes known as wrapper class.
+byte --Byte
+short -- Short
+int -- Integer
+long -- Long
+float -- Float
+double -- Double
+char -- Character
+String---- is a datatype and a class. 
+boolean -- Boolean
+all these classes belongs to lang package.
+package --- classes --- methods
+*
+javap java.lang.String
+-------------------------------------------------------------------------------------------------------------------
+1)Inheritance (is-a relationship)
+2)Aggregation(Has-a relationship)
 
+has-a relationship(employee has a address)
+-----------------------------------------------------------------------------------
+example-26
+---------------------------------------------------------
+package org.thursday;
 
+public class Address 
+{
+int streetno,houseno;
+String place,city,state;
+public Address(int streetno, int houseno, String place, String city, String state) {
+	this.streetno = streetno;
+	this.houseno = houseno;
+	this.place = place;
+	this.city = city;
+	this.state = state;
+}
+@Override
+public String toString() 
+{
+	return "Address [streetno=" + streetno + ", houseno=" + houseno + ", place=" + place + ", city=" + city + ", state="
+			+ state + "]";
+}}
+---------------------------------------------------------------------------------------------
+package org.thursday;
 
+public class Employee 
+{
+int empno;
+String name,design;
+Address add;
+public Employee(int empno, String name, String design, Address add) 
+{
+	this.empno = empno;
+	this.name = name;
+	this.design = design;
+	this.add = add;
+}
+
+void display()
+{
+	System.out.println("the empno is "+empno);
+	System.out.println("the name is "+name);
+	System.out.println("the design is "+design);
+	System.out.println("the address is "+add);
+	
+}
+public static void main(String[] args) 
+{
+	Address ob=new Address(10,204,"electronic-city","Bangalore","Karnataka");
+	Employee ob1=new Employee(1001,"Sandip","dev",ob);
+	ob1.display();
+}
+}
+----------------------------------------------------------------------------------------------------------------------
 
 
 
