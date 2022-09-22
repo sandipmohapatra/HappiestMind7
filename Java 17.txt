@@ -1311,9 +1311,149 @@ public static void main(String[] args)
 }
 }
 ----------------------------------------------------------------------------------------------------------------------
+customer has a bank account
+-------------------------------------------------
+customer ---name,address,phoneno
+bank---bname,accno,balance
+--------------------------------------------------------------
+static:-It is a keyword.
+we can declare a variable as static.
+we can declare a method as static.
+we can a static block.
+we can even declare a class as static.It is incase of inner class.
+we need not  create an object to access the static variable,static method and static block is automatically executed first before the main method.
+when we declare static a single copy is send to the JVM.
+we cannot add a static variable with non static variable.
+we cannot access a non static variable inside a static method.
+----------
+example-27
+-------------
+package org.thursday;
 
+public class StaticDemo 
+{
+static int a=10;
+static void display()
+{
+	System.out.println("This is a static method");
+}
+static
+{
+	System.out.println("This is a static block");
+}
+public static void main(String[] args) 
+{
+System.out.println("the value of a is :"+a);
+display();
+}
+}
+----------------------------------------------------------------------------------------------------------
+example-28
+---------------------
+package org.thursday;
 
+public class StaticDemo 
+{
+static int a=10;
+static void display()
+{
+	System.out.println("This is a static method");
+}
+static
+{
+	System.out.println("This is a static block");
+}
+public static void main(String[] args) 
+{
+System.out.println("the value of a is :"+StaticDemo.a);
+StaticDemo.display();
+}
+}
+----------------------------------------------------------------------------------------------
+package org.thursday;
 
+public class StaticDemo 
+{
+	 static int a=0;
+	 static int b=20,c=a+b;
+static void display()
+{
+	int a=20;
+	System.out.println(a);
+	System.out.println("This is a static method");
+	System.out.println("The sum is "+c);
+}
+static int increment()
+{
+	System.out.println(a);
+	return a++;
+}
+static
+{
+	System.out.println("The sum is "+c);
+	System.out.println("This is a static block");
+}
+public static void main(String[] args) 
+{
+	
+System.out.println("the value of a is :"+StaticDemo.a);
+StaticDemo.display();
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+}
+}
+---------------------------------------------------------------------------------------------------------
+package org.thursday;
+
+public class StaticDemo 
+{
+	 static int a=10;
+	 static int b=20,c=a+b;
+static void display()
+{
+	int  a=20;
+	System.out.println("inside the display method"+a);
+	System.out.println("This is a static method");
+	System.out.println("The sum is "+c);
+}
+static int increment()
+{
+	System.out.println(a);
+	return a++;
+}
+static
+{
+	System.out.println("The sum is "+c);
+	System.out.println("This is a static block");
+}
+public static void main(String[] args) 
+{
+	int a=30;
+	System.out.println("inside the main "+a);
+System.out.println("the value of a is :"+StaticDemo.a);
+StaticDemo.display();
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+increment();
+}
+}
+-------------------------------------------------------------------------------------------------------------
+final:-
+----------------
+abstract-------
+--------------------
+Interface------
 
 
 
