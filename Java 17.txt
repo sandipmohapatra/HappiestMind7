@@ -1565,6 +1565,7 @@ we use the keyword interface and implements.
 we can extend a interface into another interface.
 if we declare a variable in a interface it is bydefault public static and final.
 while overriding the methods should be public.
+we cannot create object of an interface.
 --------------------------------------------------------------------------------------------------
 
 example-30
