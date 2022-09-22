@@ -1476,8 +1476,88 @@ fd.display();
 }
 }
 --------------------------------------------------------------------------------------------------------
-abstract-------
+abstract class
+----------------------
+abstract class is a class which contains abstract methods and concret methods(nornal methods or methods with body)
+we cannot create object of an abstract class we have to inherite it into a class override the abstract methods and create object for this class.
+abstract class is a incomplete class.
+--------------------------------------------
+example-29
 --------------------
+package org.thursday;
+
+ abstract class Abstractdemo1 
+{
+abstract void deposite();//incomplete methods don't have body
+abstract void withdraw();
+void displaybal()   //concrete method with body
+{
+	System.out.println("this is the final balance");
+}
+}
+
+public class Abstractdemo extends Abstractdemo1 
+{
+	@Override
+	void deposite() 
+	{
+		System.out.println("this is a deposite method");
+	}
+
+	@Override
+	void withdraw() {
+		System.out.println("this is a withdraw method");
+			}
+	public static void main(String[] args) 
+	{
+		Abstractdemo  ob=new Abstractdemo();
+		ob.deposite();
+		ob.displaybal();
+		ob.withdraw();
+	}
+}
+-------------------------------------------------------------------------------------------------------------
+package org.thursday;
+
+ abstract class Abstractdemo1 
+{
+void deposite()
+{
+	System.out.println("deposite");
+}
+void displaybal()   //concrete method with body
+{
+	System.out.println("this is the final balance");
+}
+}
+ 
+ abstract class Abstractdemo2 extends Abstractdemo1
+ {
+ abstract void deposite();
+ abstract void withdraw();
+  }
+
+ public class Abstractdemo extends Abstractdemo2 
+{
+	@Override
+	void deposite() 
+	{
+		System.out.println("this is a deposite method");
+	}
+
+	@Override
+	void withdraw() {
+		System.out.println("this is a withdraw method");
+			}
+	public static void main(String[] args) 
+	{
+		Abstractdemo  ob=new Abstractdemo();
+		ob.deposite();
+		ob.displaybal();
+		ob.withdraw();
+	}
+}
+-------------------------------------------------------------------------------------------------
 Interface------
 
 
