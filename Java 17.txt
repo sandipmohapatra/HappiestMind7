@@ -1563,7 +1563,10 @@ In this it contains abstract methods only.we don't use the keyword abstract.
 By interface we can perform multiple inheritance.
 we use the keyword interface and implements.
 we can extend a interface into another interface.
-if we declare a variable in a interface it is bydefault static and final.
+if we declare a variable in a interface it is bydefault public static and final.
+while overriding the methods should be public.
+--------------------------------------------------------------------------------------------------
+
 example-30
 -----------------
 package org.thursday;
