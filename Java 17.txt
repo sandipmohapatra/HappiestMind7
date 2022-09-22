@@ -1559,6 +1559,65 @@ void displaybal()   //concrete method with body
 }
 -------------------------------------------------------------------------------------------------
 Interface------
+In this it contains abstract methods only.we don't use the keyword abstract.
+By interface we can perform multiple inheritance.
+we use the keyword interface and implements.
+we can extend a interface into another interface.
+if we declare a variable in a interface it is bydefault static and final.
+example-30
+-----------------
+package org.thursday;
+
+public interface InterfaceDemo
+{
+	public static final int a = 10;
+void inputdata();
+}
+
+ interface InterfaceDemo1
+{
+void inputdata1();
+}
+
+ interface InterfaceDemo2 extends InterfaceDemo1
+ {
+ void inputdata2();
+ }
+----------------------------------------------------------------
+package org.thursday;
+
+public class InterfaceTest implements  InterfaceDemo,InterfaceDemo2
+{
+
+	@Override
+	public void inputdata1() {
+		System.out.println("this is method1");
+		
+	}
+
+	@Override
+	public void inputdata2() {
+		System.out.println("this is method2");
+		
+	}
+
+	@Override
+	public void inputdata() {
+		
+		System.out.println("this is method3");	
+	}
+	public static void main(String[] args) {
+		InterfaceTest ob=new InterfaceTest();
+		System.out.println(a);
+		System.out.println(InterfaceTest.a);
+		ob.inputdata();
+		ob.inputdata1();
+		ob.inputdata2();
+	}
+
+}
+-----------------------------------------------------------------------------------------------------
+
 
 
 
