@@ -1789,8 +1789,55 @@ System.out.println(ob);
 }
 }
 -------------------------------------------------------------------------------------------------------------
+assignment-1
+---------------------------  
+employee class :-empno,name,salary,designation
 
-
+and add the obaject to the linked list.
+--------------------------------------------------------------------------------------------------------------------
+example-37
+---------------------
+package org.friday;
+import java.util.LinkedList;
+public class LinkedListExample 
+{
+public static void main(String[] args) {
+	LinkedList ls=new LinkedList();
+	ls.add(10);
+	ls.add(20);
+	ls.add(10);
+	ls.add(30);
+	ls.add(10);
+	ls.add(40);
+	ls.add("apple");
+	ls.addFirst(100);
+	ls.addLast(200);
+	System.out.println(ls.contains(150));//return boolean value
+	System.out.println(ls.contains(100));
+	System.out.println(ls);
+	}
+}
+-----------------------------------------------------------------------------------------------------
+example-38
+-----------------------
+import java.util.*;
+public class Treeexample 
+{
+	public static void main(String[] args) 
+	{	
+		HashSet hs=new HashSet();
+		   System.out.println(hs.isEmpty());//return boolean value(true)
+		   System.out.println(hs.size());
+		    hs.add(10);    hs.add(30);    hs.add(40);    hs.add(80);    hs.add(100);     hs.add(10);
+		   System.out.println(hs);
+		   System.out.println(hs.isEmpty());
+		   System.out.println(hs.size());
+		   System.out.println(hs.contains(30));
+		   System.out.println(hs.contains(300));
+		      hs.remove(100);
+		   System.out.println(hs);     hs.clear();System.out.println(hs);   System.out.println(hs.size());
+	}}
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
