@@ -1637,8 +1637,8 @@ in this we cannot enter duplicate data.
 2)list(interface)---->classes(LinkedList,ArrayList,Vector,Stack)
 3)Map(interface)---->classes(HashMap,HashTable)
 ------------------------------------------------------------------------------------------------
-HashSet:-
-TreeSet:-
+HashSet:-It will display in random order.
+TreeSet:-It displays in shorted order.
 LinkedHashSet:-
 --------------------------------------------------------------------------------
 example-31
@@ -1681,8 +1681,48 @@ System.out.println(ob);
 }
 }
 --------------------------------------------------------------------------------------
-
-
+example-33
+-------------------
+package org.friday;
+import java.util.*;
+public class SetDemo 
+{
+public static void main(String[] args) 
+{
+HashSet<Integer> ob=new HashSet<Integer>();
+ob.add(30);
+ob.add(50);
+ob.add(40);
+ob.add(20);
+ob.add(10);
+ob.add(70);
+ob.add(60);
+System.out.println(ob);
+}
+}
+-----------------------------------------------------------------
+Example-34
+---------------------
+package org.friday;
+import java.util.*;
+public class SetDemo 
+{
+public static void main(String[] args) 
+{
+LinkedHashSet<Integer> ob=new LinkedHashSet<Integer>();
+ob.add(30);
+ob.add(50);
+ob.add(40);
+ob.add(20);
+ob.add(10);
+ob.add(10);
+ob.add(10);
+ob.add(70);
+ob.add(60);
+System.out.println(ob);
+}
+}
+----------------------------------------------------------------------------
 
 
 
