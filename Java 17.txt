@@ -1621,9 +1621,25 @@ public class InterfaceTest implements  InterfaceDemo,InterfaceDemo2
 
 }
 -----------------------------------------------------------------------------------------------------
-
-
-
+Array is a collection of similar elements(datatypes) or homogeneous (datatype) elements.
+int[] a=new int[5]; 
+The memory block is fixed.
+----------------------------------------------------------------------
+Collection framework:-
+1)It is a collection of objects.We can also store data in the form of primative datatype.
+2)It increases dynamically when elements are added to it.
+3)It decreases  dynamically when we remove elements from it.
+4)It belongs to util package
+--------------------------------------------------------------------------------------------------
+we have 3 interfaces
+1)set(interface)---->classes(HashSet,TreeSet,LinkedHashSet)
+2)list(interface)---->classes(LinkedList,ArrayList,Vector,Stack)
+3)Map(interface)---->classes(HashMap,HashTable)
+------------------------------------------------------------------------------------------------
+HashSet:-
+TreeSet:-
+LinkedHashSet:-
+--------------------------------------------------------------------------------
 
 
 
