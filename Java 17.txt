@@ -1663,6 +1663,24 @@ System.out.println(ob);
 ------------------------------------------------------------------------------------
 example-32
 --------------------------
+package org.friday;
+import java.util.*;
+public class SetDemo 
+{
+public static void main(String[] args) 
+{
+TreeSet<String> ob=new TreeSet<String>();
+ob.add("orange");
+ob.add("grapes");
+ob.add("banana");
+ob.add("apple");
+ob.add("annar");
+ob.add("lichi");
+ob.add("guava");
+System.out.println(ob);
+}
+}
+--------------------------------------------------------------------------------------
 
 
 
