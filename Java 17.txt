@@ -1639,7 +1639,7 @@ in this we cannot enter duplicate data.
 ------------------------------------------------------------------------------------------------
 HashSet:-It will display in random order.
 TreeSet:-It displays in shorted order.
-LinkedHashSet:-
+LinkedHashSet:-It will display the elements in the same order.
 --------------------------------------------------------------------------------
 example-31
 ---------------------
@@ -1723,8 +1723,72 @@ System.out.println(ob);
 }
 }
 ----------------------------------------------------------------------------
+list(interface)---->classes(LinkedList,ArrayList,Vector,Stack)
 
+LinkedList :- it will display the data in same order and it will also display the duplicate data.
+--------------------------------------------
+example-35
+-------------------
+package org.friday;
+import java.util.*;
+public class SetDemo 
+{
+public static void main(String[] args) 
+{
+LinkedList<Integer> ob=new LinkedList<Integer>();
+ob.add(30);
+ob.add(50);
+ob.add(40);
+ob.add(20);
+ob.add(10);
+ob.add(10);
+ob.add(10);
+ob.add(70);
+ob.add(60);
+System.out.println(ob);
+}
+}
+-------------------------------------------------------------------------------------------------
+example-36
+-----------------
+package org.friday;
+public class Student
+{
+int rollno;
+String name,address;
+public Student(int rollno, String name, String address)
+{
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+@Override
+public String toString() 
+{
+	return "Student [rollno=" + rollno + ", name=" + name + ", address=" + address + "]";
+}
+}
+---------------------------------------------------------------------------------------------
+package org.friday;
+import java.util.*;
+public class SetDemo 
+{
+public static void main(String[] args) 
+{
+LinkedList<Student> ob=new LinkedList<Student>();
+Student obj1=new Student(101,"sandip","Bangalore");
+Student obj2=new Student(102,"Kiran","Bangalore");
+Student obj3=new Student(103,"sunil","Hyd");
+Student obj4=new Student(104,"Madhu","Pune");
+ob.add(obj1);
+ob.add(obj2);
+ob.add(obj3);
+ob.add(obj4);
+System.out.println(ob);
 
+}
+}
+-------------------------------------------------------------------------------------------------------------
 
 
 
