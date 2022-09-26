@@ -2039,8 +2039,81 @@ public static void main(String[] args) {
 }
 }
 -------------------------------------------------------------------------------------------------------
+*The main purpose of using Set in HashMap is we don't have the Iterator interface for HashMap.
+-------------------------------------------------------------------  
 
+HashMap :- in this we enter key and value pair.
+Set set=hm.entrySet(); //HashMap is converted to set we have entrySet() in HashMap .
 
+     Iterator itr=set.iterator();
+     while(itr.hasNext())
+     {
+     Map.Entry en=(Map.Entry)itr.next();//typecasting the next() element with Map.Entry 
+     System.out.println(en.getKey()+"   "+en.getValue());//Map.Entry has 2 methods getKey() and getValue()
+-----------------------------------------------------------------------
+Example-46
+------------------------
+import java.util.*;
+public class HashMapExample 
+{
+public static void main(String[] args) {
+	HashMap<Integer,String> hm=new HashMap<Integer,String>();
+	hm.put(1, "Abhinav");
+	hm.put(2, "Anna");
+	hm.put(3, "Aditya");
+	hm.put(4, "Kundan");
+	hm.put(5, "Riya");
+	hm.put(5, "prathyusha");
+	System.out.println(hm);
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno and name");
+	int rollno=ob.nextInt();
+	String name=ob.next();
+	hm.put(rollno,name);
+	System.out.println(hm);
+	Set set=hm.entrySet();//HashMap is convereted to set
+	Iterator itr=set.iterator();
+    while(itr.hasNext())
+    {
+    Map.Entry en=(Map.Entry)itr.next();//set is converted to Map
+    System.out.println(en.getKey()+"   "+en.getValue());
+}}}
+----------------------------------------------------------------------------------------------
+Example-47
+----------------------
+//HashMap:- In this we enter key and value pair.Key cannot be duplicate.
+
+package org.monday;
+import java.util.*;
+public class LinkListDemo 
+{
+	public static void main(String[] args) 
+	{
+		    HashMap<Integer,String> hm=new HashMap<Integer,String>();
+		    int[] a=new int[5];
+		    String[] b=new String[5];
+			hm.put(1, "Abhinav");
+			hm.put(2, "Anna");
+			hm.put(3, "Aditya");
+			hm.put(4, "Kundan");
+			hm.put(5, "Riya");
+			hm.put(5, "prathyusha");
+			System.out.println(hm);
+			Scanner ob=new Scanner(System.in);
+			System.out.println("enter rollno and name");
+			int rollno=ob.nextInt();
+			String name=ob.next();
+			hm.put(rollno,name);
+			for(int i=0;i<5;i++)
+			{
+				a[i]=ob.nextInt();
+				b[i]=ob.next();
+			hm.put(a[i],b[i]);
+			}
+					
+			System.out.println(hm);
+			}}
+-----------------------------------------------------------------------------------------------------------------
 
 
 
