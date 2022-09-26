@@ -2013,7 +2013,32 @@ while(li.hasPrevious())
 	System.out.println(li.previous());
 }}}
 ------------------------------------------------------------------------------------------------------------------------
+example-45
+-------------------------------------------------------------------------------------------------------------------------
+HashMap:- In this we enter key and value pair.Key cannot be duplicate.
 
+package collection;
+import java.util.*;
+public class HashMapExample 
+{
+public static void main(String[] args) {
+	HashMap<Integer,String> hm=new HashMap<Integer,String>();
+	hm.put(1, "Abhinav");
+	hm.put(2, "Anna");
+	hm.put(3, "Aditya");
+	hm.put(4, "Kundan");
+	hm.put(5, "Riya");
+	hm.put(5, "Sandip");
+	System.out.println(hm);
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno and name");
+	int rollno=ob.nextInt();
+	String name=ob.next();
+	hm.put(rollno,name);
+	System.out.println(hm);
+}
+}
+-------------------------------------------------------------------------------------------------------
 
 
 
