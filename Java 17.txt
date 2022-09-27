@@ -2461,10 +2461,11 @@ source ----sorround with---try catch
 try-catch block
 ------------------------
 if the try block is successful of there is an error then the catch block will execute.
+-------------------------------------------------
 finally block:-
 ------------------------
 This is used for closing of connections,class etc which you have opened during the program.
-This block will definetly execute. the try is sucess or not it doesnot matter.
+This block will definetly execute. the try is sucess or not it doesnot matter. 
 
 ----------------------------
 example-3
@@ -2493,6 +2494,63 @@ public class ExceptionDemo
 	}
 }
 ----------------------------------------------------------------------------------------
+Throws 
+--------------
+This is mainly used for checked exception.
+example:-
+i)SQLException
+ii)IOException
+iii)InteruptedException  (Thread)
+iv)ServletException
+--------------------------------------------------------------------------------------------------------
+example-4
+-------------------------
+package org.tuesday;
+import java.util.*;
+public class ExceptionDemo extends Thread
+{
+	public static void main(String[] args) throws InterruptedException 
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i);
+			sleep(1000); //it is interrupting the flow control so we need to handle it.
+		}
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------
+throw :-It is used for user defined exception.
+-------------------------------------------------------------------
+example:- 
+i)marks should be +ve
+ii)salary should be greater than 18000
+iii)age should be greater than 18 for vote.
+-----------------------------------------------------------------------------------------
+example-5
+-------------------
+package org.tuesday;
+import java.util.*;
+public class ExceptionDemo 
+{
+	public static void main(String[] args) throws Exception 
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter your age");
+		int age=ob.nextInt();
+		if(age>=18)
+			System.out.println("ok");
+		else
+			throw  new Exception("Age should be greater than or equal to 18 to vote"); 
+	}
+}
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
