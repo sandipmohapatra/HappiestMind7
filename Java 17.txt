@@ -2389,7 +2389,7 @@ There are 5 keywords to handle the error.
 i)try
 ii)catch
 iii)finally
-iv)throw
+iv)throw 
 v)throws
 ----------------------------------------------------
 The main purpose of exception handling is to display the error message and the program should not terminate in between.
@@ -2544,8 +2544,33 @@ public class ExceptionDemo
 	}
 }
 -----------------------------------------------------------------------------------------------------
-
-
+in place of throws we can also handle using try--catch block
+-------------------------------------------------------------------------------------
+Throws Exception does not require any body.So the execution will be faster in place of throws exception
+-------------------------------------------------------------------------------------------- 
+example-6
+------------------
+package org.tuesday;
+import java.util.*;
+public class ExceptionDemo extends Thread
+{
+	public static void main(String[] args)
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i);
+			try {
+				sleep(1000);
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			} //it is interrupting the flow control so we need to handle it.
+		}
+	}
+}
+---------------------------------------------------------------------------------------
+ArrayIndexOutOfBound Exception
+--------------------------------------------------------
 
 
 
