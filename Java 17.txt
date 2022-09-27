@@ -2348,7 +2348,7 @@ servlet--servletApi.jar
 spring----25 jar files.----------------------------------------
 Hibernate ---15 jar files.
 junit :- 3 jar files.
-----------------------------------------
+-------------------------------------------------------
 1)manually we need to add the jar files.
 -------------------------------------------------------
 maven tool:-It has a repository.we need to mention the appliaction name with version .
@@ -2356,10 +2356,70 @@ It will automatically download from the repository.
 and store it in the local machine.
 The appliaction should be written in the POM.xml.
 
+----------------------------------------------------------------------------------------------------------------------------------------
+Exception Handling/error handling
+------------------------------------------------------
+1)compile time error----missing of semi-colon,spelling mistake we have to manually rectify it.
+2)logical error----This is due to wrong logic.
+3)runtime exception:- 
+example:- end user enter age as ----22 years (input mismatch)
+divide by zero error ---infinite (Arithmatic exception)
+crossing the array limit.
+--------------------------------------------------------
+we are going to handle runtime exception only.
+----------------------------------------------------------------------
+								Exception
 
+1)checked Exception :- you have to handle otherwise the program will not execute
+i)SQLException
+ii)IOException
+iii)InteruptedException
+iv)ServletException
 
+2)unchecked Exception
+i)ArithmaticException
+ii)ArrayIndexOutOfBound Exception
+iii)InputMismatch Exception
 
-
+3)error
+i)HardCrash
+ii)StackOverflow
+------------------------------------------------------------------------------------------------------------------------------
+There are 5 keywords to handle the error.
+i)try
+ii)catch
+iii)finally
+iv)throw
+v)throws
+----------------------------------------------------
+The main purpose of exception handling is to display the error message and the program should not terminate in between.
+so we have to use try and catch block.
+------------------------------
+example-1
+----------------------
+package org.tuesday;
+import java.util.*;
+public class ExceptionDemo 
+{
+public static void main(String[] args) 
+{
+	try
+	{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter 2 nos");
+	int a =ob.nextInt();
+	int b=ob.nextInt();
+	int c=a/b;
+	System.out.println("the result is "+c);
+	}
+	catch(Exception ae)
+	{
+		System.out.println("the error is "+ae);
+	}
+	System.out.println("this is the o/p");
+}
+}
+--------------------------------------------------------------------------------------------------------------
 
 
 
