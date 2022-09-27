@@ -2420,7 +2420,41 @@ public static void main(String[] args)
 }
 }
 --------------------------------------------------------------------------------------------------------------
-
+example-2
+-------------------
+try with multile catch
+-------------------------------------
+package org.tuesday;
+import java.util.*;
+public class ExceptionDemo 
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			Scanner ob=new Scanner(System.in);
+			System.out.println("enter 2 nos");
+		int a=ob.nextInt();
+		int b=ob.nextInt();
+		System.out.println("the result of div is "+(a/b));
+		}
+		
+		catch(ArithmeticException ex)
+		{
+		System.out.println(ex);
+		}
+		catch(InputMismatchException ae)
+		{
+			System.out.println("the error is "+ae);
+		}
+		catch(Exception ae)
+		{
+			ae.printStackTrace();
+		}
+		System.out.println("this is the end of the prg");
+	}
+}
+--------------------------------------------------------------------------
 
 
 
