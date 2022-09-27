@@ -2455,9 +2455,44 @@ public class ExceptionDemo
 	}
 }
 --------------------------------------------------------------------------
+select the line.
+source ----sorround with---try catch
+------------------------------------------------------------------------------
+try-catch block
+------------------------
+if the try block is successful of there is an error then the catch block will execute.
+finally block:-
+------------------------
+This is used for closing of connections,class etc which you have opened during the program.
+This block will definetly execute. the try is sucess or not it doesnot matter.
 
+----------------------------
+example-3
+--------------------
+package org.tuesday;
+import java.util.*;
+public class ExceptionDemo 
+{
+	public static void main(String[] args) 
+	{
+		Scanner ob=new Scanner(System.in);
+	try {
 
-
+		System.out.println("enter 2 nos");
+		int a=ob.nextInt();
+		int b=ob.nextInt();
+		System.out.println("the result of div is "+(a/b));
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	finally
+	{
+		ob.close();
+		System.out.println("this is the end of the prg");
+	}
+	}
+}
+----------------------------------------------------------------------------------------
 
 
 
