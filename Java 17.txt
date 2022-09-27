@@ -2462,7 +2462,7 @@ try-catch block
 ------------------------
 if the try block is successful of there is an error then the catch block will execute.
 -------------------------------------------------
-finally block:-
+try-finally block:-
 ------------------------
 This is used for closing of connections,class etc which you have opened during the program.
 This block will definetly execute. the try is sucess or not it doesnot matter. 
@@ -2591,11 +2591,43 @@ public class ExceptionDemo
 				System.out.println(a[i]);
 	} catch (Exception e) {
 				e.printStackTrace();
-	}
+	}	}}
+------------------------------------------------------------------------------------------
+String:-It is immutable.(cannot be changed)
+StringBuffer:-It is mutable.(can be changed)
+StringBuilder:-It is mutable.(can be changed)
+----------------------------------------------------------------------------------
+exaample-1
+--------------------------
+package org.tuesday;
+
+public class StringDemo 
+{
+	public static void main(String[] args) {
+String a="apple";
+String b="apple";
+String c=new String("apple");
+String d=new String("apple");
+
+if(a==b) //you are comparing the hashcode.String will not create a new memory block it will point 
+	//to the same memory block . 
+	System.out.println("true");
+else
+	System.out.println("false");
 	
+if(a==c)  
+	System.out.println("true");
+else
+	System.out.println("false");
+
+if(a.equals(c))
+	System.out.println("true");
+	else
+		System.out.println("false");
+System.out.println(a.getClass().getSimpleName());
 	}
 }
-------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 
 
