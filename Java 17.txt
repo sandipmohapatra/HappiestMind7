@@ -3308,7 +3308,60 @@ public class JavaSuspendExp extends Thread
 	}
 }
 ------------------------------------------------------------------------------------------------------------------------
+Hashmap Example
+-------------------------------------------------------
+package ThreadDemos;
+import java.util.*;
+public class BankMap 
+{
+    int accno;
+    String name;
+    int balance;
+    long phone;
+    public BankMap(int accno, String name, int balance, long phone) 
+    {
+        this.accno = accno;
+        this.name = name;
+        this.balance = balance;
+        this.phone = phone;
+    }
+    @Override
+    public String toString() {
+        return "BankMap [accno=" + accno + ", name=" + name + ", balance=" + balance + ", phone=" + phone + "]";
+    }
+    
+    public static void main(String[] args) 
+    {
+        BankMap m = new BankMap(1,"Naman",2000,979797979);
+        BankMap m1 = new BankMap(2,"Aman",2000,989898989);
+        BankMap m2 = new BankMap(3,"Gourav",2000,9797999);
+        BankMap m3 = new BankMap(4,"mahesh",2000,9969969);
+        
+        HashMap<Integer,BankMap> h = new HashMap<Integer,BankMap>();
+        h.put(1, m);
+        h.put(2, m1);
+        h.put(3, m2);
+        h.put(4, m3);
+        
+        Scanner sc = new Scanner(System.in);
+       System.out.println("enter key for search");
+        int y = sc.nextInt();
+        
+        Set set=h.entrySet();
+        java.util.Iterator itr=set.iterator();
+        while(itr.hasNext())
+        {
+        Map.Entry en=(Map.Entry)itr.next();
+        if( (Integer)en.getKey() == y)
+        {
+            System.out.println(en.getValue());
+        }  
+    }
+    }
+    
+}
 
+----------------------------------------------------------------------------------------------------------------
 
 
 
