@@ -3053,6 +3053,9 @@ An Interface contain abstract method.means method without body.
 In runnable interface we have one abstract method ->run()
 In Thread class we have different methods.
 
+example-1
+--------------------
+
 package ThreadDemos;
 public class JavaSuspendExp implements Runnable
  {
@@ -3075,8 +3078,58 @@ public class JavaSuspendExp implements Runnable
 	}
 }
 -------------------------------------------------------------------------------------------
+example-3
+--------------------------
+package ThreadDemos;
+class Second implements Runnable
+{
+	synchronized public void run()
+	{
+		try
+		{
+			Thread t=Thread.currentThread();
+			String name=t.getName();
+			for(int i=1;i<=10;i++)
+			{
+				System.out.println(name+"="+i);
+				Thread.sleep(500);
+				if(name.equals("raj") && (i==4))
+				{
+					wait();
+				}
+				if(name.equals("geeta") && (i==4))
+				{
+					wait();
+				}
+				if(name.equals("seeta") && (i==6))
+				{
+					System.out.println("raj and geeta thread wakes up...");
+					notifyAll();
 
-
+				}
+				if(name.equals("raj") && (i==4))
+				{
+					notify();
+				}	}
+		}catch(Exception e){}
+	}
+	public static void main(String args[]) throws Exception
+	{ 
+		Second obj=new Second();
+		Thread t1=new Thread(obj,"raj");
+		Thread t2=new Thread(obj,"seeta");
+		Thread t3=new Thread(obj,"geeta");
+		t1.start();
+		t2.start();
+		t3.start();
+		
+	}}
+---------------------------------------------------------------------
+assignment
+-----------------
+there are 2 movie tickets and there are 3 friends  gourav,aman,Avinav
+who will get the tickets.
+-----------------------------------------------------------------------------------------------
 
 
 
