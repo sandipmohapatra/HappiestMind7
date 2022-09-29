@@ -2990,30 +2990,91 @@ Having rollno,name,address,phoneno,email
 and store it into a file using Serialization.
 Use Deserialization to read the data.
 -------------------------------------------------------------------------------------------------------
+Multi-Threading
+-------------------------
+Till now we have done single threaded programing .Like program with one main().There is single flow of control.The control start excecuting from the main method and flow till the end.
 
+In Multi-threaded programing we have start() and run().At a time all the start methods will start exceuting.
+The processer will give some time to each start().There is time sharing between all the start().
+The start() will call the run().
+--------------------------------------------------------------------------
+example-1
+------------------
+package ThreadExample;
 
+public class ThreadEx1 extends Thread
+{
+public void run()
+{
+	try
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i);
+			sleep(1000);
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+		System.out.println(ae);
+	}
+}
+}
+--------------------------------------------------
+package ThreadExample;
 
+public class MainThread 
+{
+public static void main(String[] args) 
+{
+ThreadEx1 ob1=new ThreadEx1();
+ThreadEx2 ob2=new ThreadEx2();
+ThreadEx3 ob3=new ThreadEx3();
+ob1.start(); 
+ob2.start(); 
+ob3.start();
+}
+}
+-------------------------------------------------- 
+Thread :-
+--------
+The thread is a sort of execution of instruction.
+In a program it start from public static void main(String arg[])
+Statement start executing one after the other.
 
+MultiThread :-
+-------------------
+In an application that is able to manage and coordinate multiple tasks simultaneously is called concurrent, multithread application.
+Multithreaded applications make use of thread switching and scheduling that allow 
+multiple threads to make use of system resources.
+To create a multithread application we have to implement runnable interface or extends Thread class.
+An Interface contain abstract method.means method without body.
+In runnable interface we have one abstract method ->run()
+In Thread class we have different methods.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+package ThreadDemos;
+public class JavaSuspendExp implements Runnable
+ {
+	synchronized public void run() 	{
+		for (int i = 1; i < 5; i++) 
+		{			try {
+					Thread.sleep(500);
+				System.out.println(Thread.currentThread().getName()+" "+i);
+			} catch (Exception e) 
+			{				System.out.println(e);	
+		}		
+}	
+}
+	public static void main(String args[]) {
+		JavaSuspendExp obj = new JavaSuspendExp();
+		Thread t2=new Thread(obj,"Anu");
+		Thread t3=new Thread(obj,"Ayushi");
+		Thread t1=new Thread(obj,"Riya");
+		t3.start(); t1.start();		t2.start();		
+	}
+}
+-------------------------------------------------------------------------------------------
 
 
 
