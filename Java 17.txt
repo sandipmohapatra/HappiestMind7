@@ -3643,6 +3643,60 @@ public class LambdaExpressionExample7
     }  
 }  
 ---------------------------------------------------------------------------------------------------------------------------
+package monday;
+import java.util.*;
+public class ListDemo
+{
+public static void main(String[] args)
+{
+LinkedList<String> ls=new LinkedList<String>();
+ls.add("Trupti");
+ls.add("Shubham");
+ls.add("Madhu");
+ls.add("Geetanjali");
+ls.add("Sunil");
+ls.add("Deepak");
+Collections.sort(ls);
+ls.forEach((x)->System.out.println(x));
+}
+}
+-------------------------------------------------------------------------------------------------------------
+package monday;
+import java.util.*;
+public class ListDemo
+{
+public static void main(String[] args)
+{
+LinkedList<Integer> ls=new LinkedList<Integer>();
+ls.add(10);
+ls.add(40);
+ls.add(30);
+ls.add(20);
+ls.add(50);
+Collections.sort(ls);
+ls.forEach((x)->System.out.println(x));
+System.out.println("the largest no is "+Collections.max(ls));
+System.out.println("the smallest no is "+Collections.min(ls));
+}
+}
+---------------------------------------------------------------------------------------------
+package monday;
+import java.util.*;
+public class ListDemo
+{
+public static void main(String[] args)
+{
+ArrayList<Integer> ls=new ArrayList<Integer>();
+ls.add(10);
+ls.add(40);
+ls.add(30);
+ls.add(20);
+ls.add(50);
+Collections.sort(ls,Collections.reverseOrder());
+ls.forEach((x)->System.out.println(x));
+}
+}
+------------------------------------------------------------------------------------------
 
 package ThreadDemos;
 public class LambdaExpressionExample9
