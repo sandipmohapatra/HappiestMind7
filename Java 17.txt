@@ -3451,8 +3451,197 @@ public class MemberType {
 }
 
 -------------------------------------------------------------------------------------
+Lambda Expression
+--------------------------------
+It is also known as functional interface.
+In this the interface will only contain one abstract method so it is called functional interface.
+In lambda expression we don't require 2 classes (parent and child).we don't have to override.we don't have to implement the interface.
+There is a anotation @FunctionalInterface.
+It is used to declare an interface as functional interface.(optional)
+------------------------------------------------------------------------
+@Override :- It was introduced from jdk1.5.It will match the methods of the parent class and the child class.
+both method name and the signatures(return type,parameter) should match.(optional)
+-------------------------------------------------------------------------
+what is the use of lambda expression
+1)The code is reduced in this.
+2)To provide the implementation of functional interface.
+3)Generally a interface is non-functional we have to override into the child class and introduce some functionality.
+example:- 
+interface bank
+{
+void loan();  <------these are non-functional
+void applyforCreditCard();
+}
+------------------------------------------------------------------
+*by using lambda expression we will make the interface as functional.
+----------------------------------------------------------------------
+There are 3 new components in it.
+1)Arguument-list:-It can be empty or have parameters.
+(),->,{body}
+2)Arrow-token:- It is used to link arguments-list and body of the expression.
+3)Body:- It contains the expression and statement .
+--------------------------------------------------------------------------------------------
+()->{System.out.println("Hello");} //no parameter
+----------------------------------------------------------------
+(a)->{System.out.println("Hello");} //single parameter
+----------------------------------------------------------------
+(a,b)->{System.out.println("Hello");} //multiple parameter
+----------------------------------------------------------------
+program-34
+--------------------
+package Friday;
+@FunctionalInterface
+interface example1
+{
+	public void display();  //only one abstract method
+}
+public class Lambda1
+{
+public static void main(String[] args) 
+{
+int length=10;
+int breadth=20;
+example1 obj=()->
+{
+	System.out.println("the length is "+length);
+	System.out.println("the breadth is "+breadth);
+	System.out.println("the area is "+(length*breadth));
+};
+obj.display();
+}
+}
+------------------------------------------------------------------------------------
+program-35
+-------------------
+package Friday;
+@FunctionalInterface
+interface example1
+{
+	public void display(); //only one method
+}
+@FunctionalInterface
+interface example2
+{
+	public String name();
+}
 
+@FunctionalInterface
+interface example3
+{
+	public String address(String loc);
+}
+@FunctionalInterface
+interface example4
+{
+	public int sum(int a,int b);
+}
 
+public class Lambda1
+{
+public static void main(String[] args) 
+{
+int length=10;
+int breadth=20;
+example1 obj=()->     //display method defined
+{
+	System.out.println("the length is "+length);
+	System.out.println("the breadth is "+breadth);
+	System.out.println("the area is "+(length*breadth));
+};
+obj.display();
+
+example2 obj1=()->
+{
+	return "Lambda Expression";
+};
+System.out.println(obj1.name());
+
+example3 obj2=(loc)->
+{
+	return "My Loaction is :"+loc;
+};
+System.out.println(obj2.address("Bangalore"));
+
+example4 obj3=(a,b)->(a+b);
+System.out.println("the sum is "+obj3.sum(400,500));
+
+}
+}
+---------------------------------------------------------------------------------------
+package Friday;
+@FunctionalInterface
+interface example1
+{
+	public void display(); //only one method
+}
+@FunctionalInterface
+interface example2
+{
+	public String name();
+}
+
+@FunctionalInterface
+interface example3
+{
+	public String address(String loc);
+}
+@FunctionalInterface
+interface example4
+{
+	public int sum(int a,int b);
+}
+
+public class Lambda1
+{
+public static void main(String[] args) 
+{
+int length=10;
+int breadth=20;
+example1 obj=()->     //display method defined
+{
+	System.out.println("the length is "+length);
+	System.out.println("the breadth is "+breadth);
+	System.out.println("the area is "+(length*breadth));
+};
+obj.display();
+
+example2 obj1=()->
+{
+	return "Lambda Expression";
+};
+System.out.println(obj1.name());
+
+example3 obj2=(loc)->
+{
+	return "My Loaction is :"+loc;
+};
+System.out.println(obj2.address("Bangalore"));
+
+example4 obj3=(a,b)->
+{
+return a+b;
+};
+System.out.println("the sum is "+obj3.sum(400,500));
+}}
+---------------------------------------------------------------------------------------------------------------------------
+Assignment - 4
+----------------------
+In a cruise from India to singapore there are 3 types of tickets.
+1)crew member :- free (idno,name,age,trip name)
+2)Adult above 10 years:- Rs 500 (tno,name,age,phoneno,address)
+3)Children below 10 years :-Rs 250(tno,name,age)
+Enter details of all the passengers and count no of crew members ,Adult and children traveling .
+Also display the details of all the travellers.Using HashMap.
+Display total amont of the ticket sold.
+
+------------------------------------------------------------------------------------------------------------------------------------
+Assignment-5
+-------------------------------
+According to a servey
+In a locality few use colgate,few use pepsodent,few use patanjali,few use dabar red.
+enter the details of the children,women,men of the locality .
+find the maximum use of a brand.Using HashMap.
+------------------------------------------------------------------------------------------------------
 
 
 
