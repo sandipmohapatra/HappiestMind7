@@ -1,3 +1,6 @@
+2B6_MTR_45749_3C1
+
+
 to display all the databases;
 1)show databases;
 ---------------------------------------------------------
@@ -16,6 +19,26 @@ to insert data into a table
 to view the data of the table
 6)select * from student;
 -----------------------------------------------------
+to add a column
+7)alter table student add phoneno bigint;
+-----------------------------------------------------------------------------------------------
+to insert the value
+8)update student set phoneno=9988776655 where rollno=1;
+-------------------------------------------------------------------------------------------------
+9)to update the column
+ update student set total=phy+chem+maths where rollno in (1,2);
+-------------------------------------------------------------------------------------------
+10)to update the total
+update student set total=phy+chem+maths where rollno in (1,2);
+--------------------------------------------------------------------------------------------------
+11)to update the avg
+update student set avg=total/3;
+----------------------------------------------------------------------------------------------
+12)to update the grade
+ update student set grade='First Division' where avg >= 75;
+-------------------------------------------------------------------------------------------------------
+
+
 CREATE TABLE EMPLOYEE (EMPNO INT,NAME VARCHAR(30),DESIGNATION VARCHAR(30));
 
 INSERT INTO EMPLOYEE VALUES(3,'BIJAY','PUNE');
@@ -180,3 +203,37 @@ RDBMS
 bank ---accno((accno-1,2,3)primary key---cannot enter duplicate data,it cannot be empty),name,balnce
 transaction ----accno((1,2,3,1,2,3)forign key relate to bank table),withdraw,deposite
 -----------------------------------------------------------------------------------------------------------------
+example-1
+--------------------
+package org.jdbc;
+import java.sql.*;
+public class FirstJdbc 
+{
+	public static void main(String[] args)throws Exception
+	{
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+	Statement st=con.createStatement();
+	//st.execute("create table bank(accno int,name varchar(30),balance float)");
+	st.execute("insert into bank values(1002,'Kiran',37000.45)");
+ResultSet rs=st.executeQuery("select * from bank");
+	while(rs.next())
+	{
+		System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getFloat(3));
+	}
+	}}
+------------------------------------------------------------------
+execute():- return boolean
+executeUpdate():-return 0 or 1.
+executeQuerry():- Select
+
+
+
+
+
+
+
+
+
+
+
