@@ -1,17 +1,1 @@
-The process of building new classes from existing one is called ______. 
-If an array is declared as int a[4] = {3, 0, 1, 2}, then values assigned to a[0] & a[4] will be ________ 
-Mechanism of deriving a class from another derived class is known as____ 
-RunTime Polymorphism is achieved by ______ 
-The Java compiler translates source code into
-What is the different forms of Polymorphism.
-The return data type of void means?  
- If an attribute is private, which methods have access to it? 
- A class can have many methods with the same name, as long as the number of parameters is different.  This is known as:  
-Which file is used to define dependency in maven?
-Which command can be used to check maven version?
-Which maven plugin creates the project structure?
-Agile is ?
-The most commonly used set of protocols uses  which one as  the messaging format 
-Which Command is used to show limited number of commits?
-Which command creates an empty Git repository in the specified directory?
-Command to download all the objects and references from a specified repository
+
