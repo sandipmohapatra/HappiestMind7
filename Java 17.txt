@@ -3878,7 +3878,46 @@ public class FirstJdbc
 		}}
 --------------------------------------------------------------------------------
 
-
+example-6
+--------------------
+package org.jdbc;
+import java.sql.*;
+import java.util.*;
+public class FirstJdbc 
+{
+	public static void main(String[] args)throws Exception
+	{
+		Scanner ob=new Scanner(System.in);
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+		System.out.println("enter your choice");
+		System.out.println("1.Create Table");
+		System.out.println("2.Insert Data");
+		System.out.println("3.Update Data");
+		System.out.println("4.Delete Data");
+		System.out.println("5.Select Data");
+		int c=ob.nextInt();
+		switch(c)
+		{
+		case 1:PreparedStatement st=con.prepareStatement("CREATE TABLE BANK "
+				+ "(ACCNO INT NOT NULL AUTO_INCREMENT, NAME VARCHAR(30) NOT NULL,"
+				+ "ADDRESS VARCHAR(30) NOT NULL,PRIMARY KEY(ACCNO))");
+		st.execute();
+		System.out.println("Table created");
+		break;
+		
+		case 2:System.out.println("enter name,address");
+		String name=ob.next();
+		String add=ob.next();
+		PreparedStatement st1=con.prepareStatement("insert into bank(name,address) values(?,?)");
+		st1.setString(1, name);
+		st1.setString(2,add);
+		st1.execute();
+		System.out.println("row inserted");
+		break;	
+		}
+	}}
+--------------------------------------------
 
 
 
