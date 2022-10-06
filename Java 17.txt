@@ -3848,8 +3848,13 @@ public class FirstJdbc
 	st.execute();
 	System.out.println("row inserted");
 		}}
---------------------------------------------------------------------------------------------
-
+----------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE BANK (ACCNO INT NOT NULL AUTO_INCREMENT, NAME VARCHAR(30) NOT NULL,ADDRESS VARCHAR(30) NOT NULL,PRIMARY KEY(ACCNO));
+---------------------------------------------------------------------------------------------------------------------------
+*primary key :- if we declare the column as primary key we cannot keep the column empty or null and we cannot enter duplicate value.
+------------------------------------------------------------------------------------------------------------------------------
+*Not null :- if we declare the value as not null we cannot keep the column empty.
+----------------------------------------------------------------------------------------------------------------------
 
 
 
