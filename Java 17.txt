@@ -3783,6 +3783,50 @@ public class FirstJdbc
 	System.out.println("row inserted");
 		}}
 --------------------------------------------------------------------------
+example-2
+---------------------
+package org.jdbc;
+import java.sql.*;
+import java.util.*;
+public class FirstJdbc 
+{
+	public static void main(String[] args)throws Exception
+	{
+		Scanner ob=new Scanner(System.in);
+		Class.forName("com.mysql.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+	System.out.println("enter name,address and empno which you want to update");
+	String name=ob.next();
+	String add=ob.next();
+	int empno=ob.nextInt();
+	PreparedStatement st=con.prepareStatement("update employee set name=?,address=? where empno=?");
+	st.setString(1, name);
+	st.setString(2,add);
+	st.setInt(3, empno);
+	st.execute();
+	System.out.println("row updated");
+		}}
+-----------------------------------------------------------------
+example-3
+-----------------
+package org.jdbc;
+import java.sql.*;
+import java.util.*;
+public class FirstJdbc 
+{
+	public static void main(String[] args)throws Exception
+	{
+		Scanner ob=new Scanner(System.in);
+		Class.forName("com.mysql.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+	System.out.println("enter empno which you want to delete");
+	int empno=ob.nextInt();
+	PreparedStatement st=con.prepareStatement("delete from employee where empno=?");
+	st.setInt(1, empno);
+	int x=st.executeUpdate();
+	System.out.println("row delete is :" +x);
+		}}
+---------------------------------------------------------------------------------------------
 
 
 
