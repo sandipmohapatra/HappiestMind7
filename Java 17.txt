@@ -3899,6 +3899,7 @@ public class FirstJdbc
 		int c=ob.nextInt();
 		switch(c)
 		{
+		
 		case 1:PreparedStatement st=con.prepareStatement("CREATE TABLE BANK "
 				+ "(ACCNO INT NOT NULL AUTO_INCREMENT, NAME VARCHAR(30) NOT NULL,"
 				+ "ADDRESS VARCHAR(30) NOT NULL,PRIMARY KEY(ACCNO))");
@@ -3915,6 +3916,7 @@ public class FirstJdbc
 		st1.execute();
 		System.out.println("row inserted");
 		break;	
+		
 		case 3:System.out.println("enter name,address and accno you want to update");
 		String name1=ob.next();
 		String add1=ob.next();
@@ -3926,6 +3928,7 @@ public class FirstJdbc
 		st2.execute();
 		System.out.println("row update");
 		break;	
+		
 		case 4:System.out.println("enter accno you want to delete");
 		int acc1=ob.nextInt();
 		PreparedStatement st3=con.prepareStatement("delete from bank where accno1=?");
@@ -3933,6 +3936,15 @@ public class FirstJdbc
 		st3.execute();
 		System.out.println("row delete");
 		break;	
+		
+		case 5:PreparedStatement st4=con.prepareStatement("select * from bank");
+		ResultSet rs=st4.executeQuery();
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
+		}
+		break;	
+		default:System.out.println("invalid input");
 		}
 	}}
 --------------------------------------------
