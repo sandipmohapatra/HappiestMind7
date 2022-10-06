@@ -3827,7 +3827,28 @@ public class FirstJdbc
 	System.out.println("row delete is :" +x);
 		}}
 ---------------------------------------------------------------------------------------------
-
+example-4
+-------------------
+package org.jdbc;
+import java.sql.*;
+import java.util.*;
+public class FirstJdbc 
+{
+	public static void main(String[] args)throws Exception
+	{
+		Scanner ob=new Scanner(System.in);
+		Class.forName("com.mysql.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+	System.out.println("enter name,address");
+		String name=ob.next();
+	String add=ob.next();
+	PreparedStatement st=con.prepareStatement("insert into employee(name,address) values(?,?)");
+	st.setString(1, name);
+	st.setString(2,add);
+	st.execute();
+	System.out.println("row inserted");
+		}}
+--------------------------------------------------------------------------------------------
 
 
 
