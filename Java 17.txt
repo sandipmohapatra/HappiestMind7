@@ -3915,6 +3915,24 @@ public class FirstJdbc
 		st1.execute();
 		System.out.println("row inserted");
 		break;	
+		case 3:System.out.println("enter name,address and accno you want to update");
+		String name1=ob.next();
+		String add1=ob.next();
+		int acc=ob.nextInt();
+		PreparedStatement st2=con.prepareStatement("update bank set name=?,address=? where accno=?");
+		st2.setString(1, name1);
+		st2.setString(2,add1);
+		st2.setInt(3,acc);
+		st2.execute();
+		System.out.println("row update");
+		break;	
+		case 4:System.out.println("enter accno you want to delete");
+		int acc1=ob.nextInt();
+		PreparedStatement st3=con.prepareStatement("delete from bank where accno1=?");
+		st3.setInt(1,acc1);
+		st3.execute();
+		System.out.println("row delete");
+		break;	
 		}
 	}}
 --------------------------------------------
