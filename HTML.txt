@@ -1,0 +1,15 @@
+how to work with google form.
+--------------------------------------------
+1)www.google.com/forms
+
+2)create a form
+
+3)reponses -->create spreadsheet --->create
+
+4)send
+
+5)give the mail ID
+
+6)<>  copy the iframe from embebed form.
+
+--------------------------------------------------------------
