@@ -317,7 +317,110 @@ catch(Exception ae)
 	ae.printStackTrace();
 }
 	%>
---------------------------------------------------------------------------------------------------------	
+--------------------------------------------------------------------------------------------------------
+example-2
+------------------------
+<!--  create table register(name varchar(30),pass varchar(30),contact varchar(30),address
+    varchar(30),age int,email varchar(30)); -->
+
+<html>
+<script>
+</script>
+<body bgcolor=yellow>
+<h1 color=green><center>REGISTRATION PAGE</center></h1>
+<img src="./123.JPG" alt="sorry image not available" height="380" width="500" align="right" />
+<form action=register.jsp>
+<table>
+<tr><td>Enter user name<td><input type="text" name="t1" size=20 /></tr>
+<tr><td>Enter your password<td><input type="password" name="t2" size=20 /></tr>
+<tr><td>Enter contact number<td><input type="text" name="t3" size=20/></tr>
+<tr><td>Enter address<td><input type="text" name="t4" size=20/></tr>
+<tr><td>Enter age<td><input type="text" name="t5" size=20/></tr>
+<tr><td>Enter your email<td><input type="text" name="t6" size=20/></tr>
+<tr><td><td>
+<input type="submit" value="insert"  name="b1"/>
+<input type="submit" value="update"  name="b1"/>
+<input type="submit" value="delete"  name="b1"/>
+<input type="submit" value="select"  name="b1"/>
+<input type="reset" value="reset" name="b1"/>
+</tr>
+</table></form></body></html>
+---------------------------------------------------------------------------------------------------
+<%@page import="java.sql.*"%>
+<% String a=request.getParameter("t1");
+String b=request.getParameter("t2");
+String c=request.getParameter("t3");
+String d=request.getParameter("t4");
+String e=request.getParameter("t5");
+String f=request.getParameter("t6"); 
+String g=request.getParameter("b1");
+
+%>
+
+<h1><center>Employee Registration Page</center></h1><hr>
+
+<%
+Connection con=null;
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}
+	if(g.equals("insert"))
+	{
+	PreparedStatement ps=con.prepareStatement("insert into register values(?,?,?,?,?,?)");
+	ps.setString(1,a);
+	ps.setString(2,b);
+	ps.setString(3,c);
+	ps.setString(4,d);
+	ps.setInt(5,Integer.parseInt(e));
+	ps.setString(6,f);
+	ps.execute();
+}
+else if(g.equals("update"))
+{
+PreparedStatement ps=con.prepareStatement("update register set name=?,pass=?,contact=?,address=?,age=? where email=?");
+ps.setString(1,a);
+ps.setString(2,b);
+ps.setString(3,c);
+ps.setString(4,d);
+ps.setInt(5,Integer.parseInt(e));
+ps.setString(6,f);
+ps.execute();
+}
+else if(g.equals("delete"))
+{
+PreparedStatement ps=con.prepareStatement("delete from register where name=?");
+ps.setString(1,a);
+ps.execute();
+}
+else if(g.equals("select"))
+{
+	PreparedStatement ps=con.prepareStatement("select * from register");
+	ResultSet rs=ps.executeQuery();
+	out.println("<table border=1 width='75%'>");
+	out.println("<tr><th>Name<th>password<th>Contact no<th>Address<th>Age<th>Email</tr>");
+	while(rs.next())
+	{
+		out.println("<tr><td>"+rs.getString(1)+" <td> "+rs.getString(2)+" <td> "+rs.getString(3)+" <td> "+rs.getString(4)+" <td> "+rs.getInt(5)+" <td> "+rs.getString(6)+"</tr>");
+	}
+	out.println("</table>");
+}
+else
+{
+	
+}
+
+	%>
+	
+--------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+		
 	
 	
 	
