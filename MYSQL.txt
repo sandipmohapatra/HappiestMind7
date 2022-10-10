@@ -251,8 +251,77 @@ public class FirstJdbc
 	System.out.println("row inserted");
 		}}
 --------------------------------------------------------------------------------------------
+JSP
+-----------
+<!--  create table register(name varchar(30),pass varchar(30),contact varchar(30),address
+    varchar(30),age int,email varchar(30)); -->
 
+<html>
+<script>
+</script>
+<body bgcolor=yellow>
+<h1 color=green><center>REGISTRATION PAGE</center></h1>
+<img src="./123.JPG" alt="sorry image not available" height="380" width="500" align="right" />
+<form action=register.jsp>
+<table>
+<tr><td>Enter user name<td><input type="text" name="t1" size=20 /></tr>
+<tr><td>Enter your password<td><input type="password" name="t2" size=20 /></tr>
+<tr><td>Enter contact number<td><input type="text" name="t3" size=20 /></tr>
+<tr><td>Enter address<td><input type="text" name="t4" size=20 /></tr>
+<tr><td>Enter age<td><input type="text" name="t5" size=20 /></tr>
+<tr><td>Enter your email<td><input type="text" name="t6" size=20 /></tr>
+<tr><td><td><input type="submit" value="submit" />
+<input type="reset" value="reset" /></tr>
+</table>
+</form>
+</body>
+</html>
+---------------------------------------------------------------------------------------------
+<%@page import="java.sql.*"%>
+<% String a=request.getParameter("t1");
+String b=request.getParameter("t2");
+String c=request.getParameter("t3");
+String d=request.getParameter("t4");
+String e=request.getParameter("t5");
+String f=request.getParameter("t6"); %>
 
+<%
+out.println("My name is "+a);
+out.println("<br>");
+out.println("My password is "+b);
+out.println("<br>");
+out.println("My contact no is "+c);
+out.println("<br>");
+out.println("My address is "+d);
+out.println("<br>");
+out.println("My age is "+e);
+out.println("<br>");
+out.println("My email is "+f); %>
+
+<%
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/happiestmind","root","1234");
+	PreparedStatement ps=con.prepareStatement("insert into register values(?,?,?,?,?,?)");
+	ps.setString(1,a);
+	ps.setString(2,b);
+	ps.setString(3,c);
+	ps.setString(4,d);
+	ps.setInt(5,Integer.parseInt(e));
+	ps.setString(6,f);
+	ps.execute();
+}
+catch(Exception ae)
+{
+	ae.printStackTrace();
+}
+	%>
+--------------------------------------------------------------------------------------------------------	
+	
+	
+	
+	
 
 
 
