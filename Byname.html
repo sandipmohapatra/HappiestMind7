@@ -1,0 +1,33 @@
+<!-- document.getElementsByName()-->
+
+
+<script>  
+function totalelements()  
+{  
+var allgenders=document.getElementsByName("gender");  
+alert("Total Genders:"+allgenders.length);  
+}  
+</script>  
+<form>
+Enter your name<input type=text name=t1 size=20>   
+Male:<input type="radio" name="gender" value="male">  
+Female:<input type="radio" name="gender" value="female">  
+  
+<input type="button" onclick="totalelements()" value="Total Genders">  
+</form>  
+-------------------------------------------------------------------------------------------------------
+The document object represents the whole html document.
+
+When html document is loaded in the browser, it becomes a document object. It is the root element that represents the html document. It has properties and methods. By the help of document object, we can add dynamic content to our web page.
+it is the object of window. So we cal also write window.document  
+--------------------------------------------------------------------------------------------------------
+properties:-
+document :- form ----text,radio,select,checkbox,button
+------------------------------------------------------------------------------
+methods():-
+1)document.write();
+2)document.getElementsByName()
+3)document.getElementsById()
+
+
+
