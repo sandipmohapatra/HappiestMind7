@@ -320,6 +320,8 @@ MyName: string=`sandip `
 studList: string[]=["Madhu","Shubham","trupti","Mohit"]
 }
 -----------------------------------------------------------
+student.html
+------------------------
 <html>
 <div>
 My name is {{MyName}}<br/>
@@ -399,7 +401,7 @@ sayName()
     console.log("my name is ",this.name);
     console.log("my email is ",this.email);
     console.log("my address is ",this.address);
-document.write("Hello all");
+       document.write("Hello all");
     alert("Hello all");
         }
 
@@ -413,7 +415,7 @@ There are 2 ways of data binding
 2)two-way binding
 ----------------------------
 1)one-way binding
-i)interpolation :- we are using double curly braces {{}}.It is also called as expression.
+1)interpolation :- we are using double curly braces {{}}.It is also called as expression.
 example:-
 <p>The sum of 6 and 7 is {{6+7}}</p>
 <p>The name is {{name}}</p>
@@ -432,7 +434,7 @@ Enter your name<input type=text name=t1 size=20>
 
 example in Angular:-
 Enter your name<input type=text [(ngModel)]="name" size=20>
-In this when we change the name will be updated.
+In this when we change the name it will be updated.
 ------------------------------------------------------------------------------
 when we use [(ngModel)] we have to import
 import {FormsModule} from '@angular/forms';
@@ -748,8 +750,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eventsdemo.component.css']
 })
 export class EventsdemoComponent {
-    public msg;
-    public txtName;
+    public msg:any;
+    public txtName:any;
     public OnFocus() {
       this.msg = 'Name in Block Letters';
     }
@@ -1397,7 +1399,61 @@ create an enployee form
 having empno,name,salary,design,emial,phoneno,deptname
 display all employees and give option to delete and edit
 ----------------------------------------------------------------------------------------------------------
+angular template form
+----------------------------------------------
+exnmple-1
+--------------------
+import { Component, OnInit } from '@angular/core';
 
+@Component({
+  selector: 'app-formdemo',
+  templateUrl: './formdemo.component.html',
+  styleUrls: ['./formdemo.component.css']
+})
+export class FormdemoComponent {
+
+  public SubmitClick(obj:any)
+  {
+    alert(obj.txtName + 'is Shipped To' + obj.ShippedTo);
+    }
+
+}
+---------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<div class="container">
+  <h2>Register products</h2>
+  <form #frmRegister="ngForm" (submit)="SubmitClick(frmRegister.value)">
+  <div class="form-group">
+  <label>Name</label>
+  <input type="text" class="form-control" name="txtName" required #txtName="ngModel" ngModel>
+  </div>
+  <div class="form-group">
+  <label>Shipped To</label>
+  <div>
+  <select class="form-control" name="ShippedTo"#shippedTo="ngModel" ngModel>
+  <option>Hyd</option>
+ <option>Chenni</option>
+  </select>
+  </div>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  Name: {{frmRegister.value.txtName}}
+  <br>
+  Shipped To: {{frmRegister.value.ShippedTo}}
+ </div>
+----------------------------------------------------------------------------------------------------
 
 
 
