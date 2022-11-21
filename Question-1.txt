@@ -45,51 +45,6 @@ Thus, the answer is 4.
 
 
 ----------------------------------------------------------------------------------------------
-There is an endless number line (consisting of only integer positions). You begin at position 0.
-N boxes have distinct positions, with the ith box occupying position A[i].
-There are additionally M special distinct positions, and the jth position is B[j]. 
-
-You can shift boxes from one position to the left or right in one move. If a box is in the way of your move, you should push it to the next location in that direction.
-If another box takes the following spot, that box is likewise pushed to the next position, and so on.
-You cannot go through the boxes. You can't pull the boxes towards you. You can make an infinite number of moves.
-Find the maximum number of boxes that can be placed in special positions. 
-
-Note
-Some boxes can be initially placed in special positions. 
-
-Function Description 
-In the provided code snippet, implement the provided specialPositions(...) method.
-You can write your code in the space below the phrase "Write Code here".
-There will be multiple test cases running so the Input and Output should match exactly as provided. 
-The base Output variable result is set to a default value of 0 (Zero) which can be modified. Additionally, you can add or remove these output variables. 
-
-Input Format 
-The first line of input contains two space-separated integers N, M. 
-The second line of input contains N distinct space-separated integers in the increasing order denoting the initial positions of the boxes. 
-The third line of input contains M distinct space-separated integers in the increasing order denoting the special positions. 
- 
-Sample Input 
-5 6                                 --> denotes N, M
--1 1 5 11 15                   --> denotes array A
--4 -3 -2 6 7 15               -->  denotes array B
-
-Constraints 
-1<= N, M <= 200000. 
--1*(109)) <= A[i],B[i] <=(109) and a[i]!=0 and b[i]!=0  
- 
-Output Format
-The output contains a single integer denoting the maximum number of boxes that can be placed in special positions. 
- 
-Sample Output 
-4 
-
-Explanation 
-We can go 5 to the right: the box on position 1 gets pushed to position 6 and the box on position 5 gets pushed to position 7.
-Then we can go 6 to the left to end up on position −1 and push a box to −2.
-In the end, the boxes are on positions [−2, 6, 7, 11, 15] respectively.
-Among them, positions [−2, 6, 7,15] are special.
-Thus, the answer is 4. 
---------------------------------------------------------------------------------------------------------------
 Odd Values
 
 You are given a string S which contains only lowercase letters.
