@@ -103,4 +103,37 @@ Array A[i] after adding with X
 After modification of the array, there are 3 odd values in the array (19, 23, 17).
 Hence, the output is 3.
 ----------------------------------------------------------------------------------------------------------------------------------------
+QUESTION-3
+----------------------
+Lynda recently purchased a lucky draw ticket but unfortunately, she misplaced it.
+She tried to remember the lucky draw ticket number and was able to vaguely remember a number x which could be the ticket number.
+It is entirely possible that she can get the order of the digits in the number X wrong.
+She could also see some digits multiple times, but the digits she saw are definitely in the real number of lucky draw tickets.  
+For example, if she remembered the number as 5205, then some of the possible lucky draw ticket numbers are 5205, 2055, 520, etc. but the number cannot be 20, 55502, or 12340. The number also cannot start with 0, for e.g., 052.
+ 
+Find the total number of lucky draw ticket numbers possible from the given number X.
+ 
+Function Description
+In the provided code snippet, implement the provided luckyDraw() method using the variables to print the total number of lucky draw ticket numbers possible. You can write your code in the space below the phrase "Write Code Here".
+There will be multiple test cases running so the Input and Output should match exactly as provided. The base Output variable result is set to a default value of 0 which can be modified. Additionally, you can add or remove these output variables.
 
+Input Format
+The first line contains an integer x – lucky draw ticket number remembered by Lynda. 
+ 
+Sample Input
+5205 
+ 
+Constraints
+ 1 <= X <= 1018
+
+Output Format
+Print the total number of lucky draw ticket numbers possible from the given number x.
+
+Sample Output
+13
+
+Explanation
+Possible ticket numbers are:
+502, 520, 205, 250, 5052, 5025, 5502, 5520, 5205, 5250, 2055, 2505, 2550.
+Hence the output is 13.
+-------------------------------------------------------------------------------------------------------------
