@@ -42,3 +42,106 @@ Then we can go 6 to the left to end up on position −1 and push a box t
 In the end, the boxes are on positions [−2, 6, 7, 11, 15] respectively.
 Among them, positions [−2, 6, 7,15] are special.
 Thus, the answer is 4. 
+
+
+----------------------------------------------------------------------------------------------
+There is an endless number line (consisting of only integer positions). You begin at position 0.
+N boxes have distinct positions, with the ith box occupying position A[i].
+There are additionally M special distinct positions, and the jth position is B[j]. 
+
+You can shift boxes from one position to the left or right in one move. If a box is in the way of your move, you should push it to the next location in that direction.
+If another box takes the following spot, that box is likewise pushed to the next position, and so on.
+You cannot go through the boxes. You can't pull the boxes towards you. You can make an infinite number of moves.
+Find the maximum number of boxes that can be placed in special positions. 
+
+Note
+Some boxes can be initially placed in special positions. 
+
+Function Description 
+In the provided code snippet, implement the provided specialPositions(...) method.
+You can write your code in the space below the phrase "Write Code here".
+There will be multiple test cases running so the Input and Output should match exactly as provided. 
+The base Output variable result is set to a default value of 0 (Zero) which can be modified. Additionally, you can add or remove these output variables. 
+
+Input Format 
+The first line of input contains two space-separated integers N, M. 
+The second line of input contains N distinct space-separated integers in the increasing order denoting the initial positions of the boxes. 
+The third line of input contains M distinct space-separated integers in the increasing order denoting the special positions. 
+ 
+Sample Input 
+5 6                                 --> denotes N, M
+-1 1 5 11 15                   --> denotes array A
+-4 -3 -2 6 7 15               -->  denotes array B
+
+Constraints 
+1<= N, M <= 200000. 
+-1*(109)) <= A[i],B[i] <=(109) and a[i]!=0 and b[i]!=0  
+ 
+Output Format
+The output contains a single integer denoting the maximum number of boxes that can be placed in special positions. 
+ 
+Sample Output 
+4 
+
+Explanation 
+We can go 5 to the right: the box on position 1 gets pushed to position 6 and the box on position 5 gets pushed to position 7.
+Then we can go 6 to the left to end up on position −1 and push a box to −2.
+In the end, the boxes are on positions [−2, 6, 7, 11, 15] respectively.
+Among them, positions [−2, 6, 7,15] are special.
+Thus, the answer is 4. 
+--------------------------------------------------------------------------------------------------------------
+Odd Values
+
+You are given a string S which contains only lowercase letters.
+X is calculated as per the below rule:
+You cannot add two consecutive values of character in maximum sum (if you consider the value of i-th index character of string S in maximum sum then you can not include the value of (i-1)th and (i+1)th index character of string S in maximum sum and you have to maximize the value of X).
+
+Let X be the maximum sum of string S according to the given rules above.
+
+You are also given an integer array A of size N. You have to replace A[i] with A[i]+X (Use operation A[i]=A[i]+X).
+
+You have to print the total number of odd numbers in modified array A.
+
+Note
+Consider 0-based indexing of array A and string S.
+The value of letters ""a"" = 1, ""b"" = 2, ""c"" = 3…………………..""z"" = 26.
+
+Function Description
+In the provided code snippet, implement the provided oddValues(...) method to print the total number of odd numbers in modified array A.
+You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”.
+There will be multiple test cases running so the Input and Output should match exactly as provided.
+The base Output variable result is set to a default value of -404 which can be modified. Additionally, you can add or remove these output variables.
+
+Input Format
+The first line contains string S.
+The second line contains the size of array A denoted as N.
+The third line contains the elements of array A.
+
+Sample Input
+dcaj
+4
+2 5 9 3
+
+Constraints
+1<=|S|<=1000 
+1<=N<=1000 
+1<=A[i]<=1000
+
+Output Format
+The output contains the total number of odd numbers in modified array A. 
+
+Sample Output
+3
+
+Explanation
+The value of X will be maximum when we will add the 0th index i.e ""d"" = 4 (value=4) and the 3rd index i.e. ""j""=10 (value=10). 
+The value of X is 14 (4+10).
+Array A[i] after adding with X
+2+14 = 16
+5+14 = 19
+9+14 = 23
+3+14 = 17
+After modification of the array, there are 3 odd values in the array (19, 23, 17).
+Hence, the output is 3.
+----------------------------------------------------------------------------------------------------------------------------------------
+
