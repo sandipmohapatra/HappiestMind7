@@ -137,3 +137,21 @@ Possible ticket numbers are:
 502, 520, 205, 250, 5052, 5025, 5502, 5520, 5205, 5250, 2055, 2505, 2550.
 Hence the output is 13.
 -------------------------------------------------------------------------------------------------------------
+import java.util.*;
+import java.io.*;
+import java.lang.Math; 
+public class Main
+{
+    public static int luckyDraw(int X) {
+        //Write Code Here:     
+        return 0;
+    }
+    public static void main (String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int X = sc.nextInt();
+        sc.close();
+        System.out.print(luckyDraw(X));
+    }
+}
+-----------------------------------------------------------------------------------------------
