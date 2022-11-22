@@ -155,3 +155,60 @@ public class Main
     }
 }
 -----------------------------------------------------------------------------------------------
+Question-4
+----------------------
+Delete Occurrences
+ 
+ You are given an array of integers A of size N.
+ 
+ You have to perform the following operation: 
+ Step1: You need to select a number A[i] from the array.
+ Step2: Delete one occurrence of the selected element and delete all the occurrences of A[i]-1 and A[i]+1 (if they exist) in the array.
+ Step3: Repeat Step1 and Step2 until the array is empty.
+ 
+ You have to select number A[i] from the array such that the sum of all the selected elements is maximum.
+ 
+ Write a program to maximize the sum of the selected numbers.
+ 
+ Note 
+ We have to delete all the occurrences of A[i]+1 and A[i]-1 elements if they are present in the array and not A[i+1] and A[i-1].
+ 
+ Function Description
+ In the provided code snippet, implement the provided deleteOccurrences(...) method using the variables to print the maximum sum. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ -----------------------------------------------------------------------------------------------------------
+import java.util.*; 
+ import java.lang.*;
+ import java.io.*;
+ import java.lang.Math;
+ 
+ public class Main {
+  public static int deleteOccurrences(int N, int A[]) {
+  
+  //this is default OUTPUT. You can change it.
+  int result=-404;
+  
+  //write your Logic here:
+  
+  
+  
+  return result;
+  }
+  public static void main(String[] args) {
+  // INPUT [uncomment & modify if required]
+  Scanner sc = new Scanner(System.in);
+  int N = sc.nextInt();
+  
+  int A [] = new int[N];
+  for(int i=0; i<N; i++) {
+  A[i] = sc.nextInt();
+  }
+  
+  // OUTPUT [uncomment & modify if required]
+  System.out.print(deleteOccurrences(N,A));
+  sc.close();
+  }
+ }
+----------------------------------------------------------------------------------------------------------
