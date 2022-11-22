@@ -158,7 +158,7 @@ public class Main
 Question-4
 ----------------------
 Delete Occurrences
- 
+-------------------------------------------- 
  You are given an array of integers A of size N.
  
  You have to perform the following operation: 
@@ -212,3 +212,140 @@ import java.util.*;
   }
  }
 ----------------------------------------------------------------------------------------------------------
+solution of question odd value
+-------------------------------------
+Odd Values
+
+You are given a string S which contains only lowercase letters.
+X is calculated as per the below rule:
+You cannot add two consecutive values of character in maximum sum (if you consider the value of i-th index character of string S in maximum sum then you can not include the value of (i-1)th and (i+1)th index character of string S in maximum sum and you have to maximize the value of X).
+
+Let X be the maximum sum of string S according to the given rules above.
+
+You are also given an integer array A of size N. You have to replace A[i] with A[i]+X (Use operation A[i]=A[i]+X).
+
+You have to print the total number of odd numbers in modified array A.
+
+Note
+Consider 0-based indexing of array A and string S.
+The value of letters ""a"" = 1, ""b"" = 2, ""c"" = 3…………………..""z"" = 26.
+
+Function Description
+In the provided code snippet, implement the provided oddValues(...) method to print the total number of odd numbers in modified array A.
+You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”.
+There will be multiple test cases running so the Input and Output should match exactly as provided.
+The base Output variable result is set to a default value of -404 which can be modified. Additionally, you can add or remove these output variables.
+
+Input Format
+The first line contains string S.
+The second line contains the size of array A denoted as N.
+The third line contains the elements of array A.
+
+Sample Input
+dcaj
+4
+2 5 9 3
+
+Constraints
+1<=|S|<=1000 
+1<=N<=1000 
+1<=A[i]<=1000
+
+Output Format
+The output contains the total number of odd numbers in modified array A. 
+
+Sample Output
+3
+
+Explanation
+The value of X will be maximum when we will add the 0th index i.e ""d"" = 4 (value=4) and the 3rd index i.e. ""j""=10 (value=10). 
+The value of X is 14 (4+10).
+Array A[i] after adding with X
+2+14 = 16
+5+14 = 19
+9+14 = 23
+3+14 = 17
+After modification of the array, there are 3 odd values in the array (19, 23, 17).
+Hence, the output is 3.
+-------------------------------------------------------------------------------------
+package org.happy;
+import java.util.*;
+public class tempq 
+{
+public static void main(String args[])
+{
+      Scanner scan = new Scanner(System.in);
+      int max = 0;
+      int count = 0;
+      String str = scan.next();
+      ArrayList<Integer> ls = new ArrayList<Integer>();
+      ArrayList<Integer> lk = new ArrayList<Integer>();
+      int n = scan.nextInt();
+      while(n-->0)
+      {
+            int y = scan.nextInt();
+            ls.add(y);
+      }
+      for(int i=0;i<str.length();i++)
+      {
+            for(int j=i+2;j<str.length();j++)
+            {
+                  if(j==i)
+                  {
+                        continue;
+                  }
+                  else
+                  {
+                        int num = Integer.valueOf(str.charAt(i)) + Integer.valueOf(str.charAt(j)) - 192;
+                        if(num>max)
+                        {
+                              max=num;
+                        }
+                  }
+            }
+      }
+      for(int k=0;k<ls.size();k++)
+      {
+            int c = ls.get(k) + max;
+            lk.add(c);
+      }
+      for(int k=0;k<lk.size();k++)
+      {
+            if(lk.get(k)%2!=0)
+            {
+                  count=count+1;
+            }
+      }
+      System.out.println(count);
+}
+}
+-----------------------------------------------------------------------------------------
+res = input("Enter the string ")
+n = len(s)
+l = int(input("Enter the length "))
+arr = input("Enter the integer array ").split(" ")
+arr = [int(i) for i in arr]
+maxsum = [0 for i in range(n)]
+t = ord('a')
+for i in range(n):
+    equi = ord(s[i]) - t + 1
+    if i == 0 or i == 1:
+        maxsum[i] = equi
+    elif i == 2:
+        maxsum[i] = maxsum[0] + equi
+    else:
+        maxsum[i] = equi + max(maxsum[i - 2], maxsum[i - 3])
+large = max(maxsum[n - 1], maxsum[n - 2])
+arr_mod = [arr[i] + large for i in range(l)]
+count = 0
+for ele in arr:
+    if ele%2 == 1:
+        count += 1
+print(count)
+-------------------------------------------------------------------------------------------
+This is the output:
+Enter the string dcaj
+Enter the length 4
+Enter the integer array 2 5 9 3
+3
+-----------------------------------------------------------
