@@ -44,8 +44,72 @@ Then we can go 6 to the left to end up on position −1 and push a box t
 In the end, the boxes are on positions [−2, 6, 7, 11, 15] respectively.
 Among them, positions [−2, 6, 7,15] are special.
 Thus, the answer is 4. 
+-------------------------------------------
+answere-1
+----------------------
+n,m = map(int, input().split())
+arr = list(map(int, input().split()))
+brr = list(map(int, input().split()))
+ls = list()
+start = min(arr+brr)
+end = max(arr+brr)
+for i in range(n):
+    if arr[i]>0:
+        xa = i
+        break
+else:
+    xa = n
+for j in range(m):
+    if brr[j]>0:
+        xb = j
+        break
+else:
+    xb = m
 
+def cnt(arr,brr):
+    count = 0
+    for i in arr:
+        if i in brr:
+            count += 1
+    return count
 
+inc = xa
+res = 0
+available = m-xb
+possible = n-xa
+while(arr[inc] < end) and xa!=n:
+    res = max(res, cnt(arr,brr[xb:]))
+    if res==available or res==possible:
+        break
+    # print(arr[inc]+1, arr[inc+1], inc)
+    if arr[n-1]==end:
+        if inc + 1 <= n and arr[inc] + 1 == arr[inc + 1]:
+            inc += 1
+    else:
+        while inc+1<n and arr[inc] + 1 == arr[inc + 1]:
+            inc += 1
+    if inc<n:
+        for i in range(xa, inc+1):
+            arr[i] += 1
+dec = xa-1
+availableneg = xb
+possibleneg = xa
+res2 = 0
+while(arr[dec] != start) and xa-1!=-1:
+    res2 = max(res2, cnt(arr,brr[:xb]))
+    if res2==availableneg or res2==possibleneg:
+        break
+    if arr[0]==start:
+        if dec - 1 >= 0 and arr[dec] - 1 == arr[dec - 1]:
+            dec -= 1
+    else:
+        while dec-1>=0 and arr[dec] - 1 == arr[dec - 1]:
+            dec -= 1
+    if dec>=0:
+        for i in range(xa-1, dec-1, -1):
+            arr[i] -= 1
+
+print(res+res2)
 ----------------------------------------------------------------------------------------------
 QUESTION-2
 ---------------------------------
@@ -268,6 +332,8 @@ Array A[i] after adding with X
 After modification of the array, there are 3 odd values in the array (19, 23, 17).
 Hence, the output is 3.
 -------------------------------------------------------------------------------------
+answer-Odd Values
+-------------------------------
 package org.happy;
 import java.util.*;
 public class tempq 
@@ -320,6 +386,8 @@ public static void main(String args[])
 }
 }
 -----------------------------------------------------------------------------------------
+answer-Odd Values
+--------------------------------------------
 res = input("Enter the string ")
 n = len(s)
 l = int(input("Enter the length "))
@@ -349,3 +417,129 @@ Enter the length 4
 Enter the integer array 2 5 9 3
 3
 -----------------------------------------------------------
+question-5
+-------------------
+Strings: Count Substrings
+ 
+ Given a string S containing only vowels and consonants, find the number of substrings containing only vowels of the given string with a length of 3.
+ 
+ Note
+ All the letters are in lowercase.
+ It is guaranteed that there are 3 or more characters in the given input string.
+ 
+ Function Description
+ In the provided code snippet, implement the provided countSubstring(...) method using the variables to print the number of substrings in a given string having only vowels in their string (all the characters in substrings are vowels) and substring must have length 3. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ Input Format
+ The first line of input contains a string S.
+ 
+ Sample Input
+ aiuifuie --denotes string S.
+ 
+ Constraints
+ 3<= S.length <500
+ --------------------------------------------------------------------------------------------------------
+question-6
+---------------------
+Best Car Pair
+ 
+ You are given an array A consisting of prizes for N cars.
+ A pair of Car(i) and Car(j) is called best if 1<=i<j<= N and gcd(Ai , 2*Aj) >1
+ Print the maximum number of best car pairs if you can arbitrarily reorder array A.
+ 
+ Note:
+ GCD (x, y) is the greatest common divisor of x and y. 
+ 
+ Function Description
+ In the provided code snippet, implement the provided bestCarPair(...) method using the variables to print a single integer denoting the maximum number of best car pairs if you can arbitrarily reorder array A. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”.
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ Input Format
+ The first line of the test case contains a single integer N denoting the number of cars in array A.
+ The second line of the test case contains N space-separated integers A1, A2, A3, A4 …., AN denoting price of the ith car.
+ 
+ Sample Input
+ 4 -- denotes N, the number of cars in array A.
+ 3 6 5 3 -- denotes prices of N cars.
+ ---------------------------------------------------------------------------------------------
+question-7
+---------------------
+Minimum Possible Difference
+ 
+ You are given an array consisting of N numbers.
+ You can perform at most one operation on each element.
+ 1. if (A[i] mod 2) = 0, divide it by 2. 
+ 2. if (A[i] mod 2) = 1, multiply it by 2.
+ Now you are supposed to use these operations such that Σ|A[i] − A[i − 1]| for all i is minimum.
+ So, |A[2] - A[1]| + |A[3] - A[2]| + .... + |A[N] - A[N - 1]| should be the minimum possible.
+ 
+ Function Description
+ In the provided code snippet, implement the provided strangeProblem(...) method using the variables to print the pattern for each line from 1 to i. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”.
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+  
+ Input Format
+ First-line contains N denoting the number of elements in the given array.
+ The next line consists of N space-separated integers.
+ 
+ Sample Input
+ 4
+ 2 2 4 2
+  
+ Constraints
+2 <= N <= 10^5
+ 1 <=A[i] <= 10^9
+ 
+ Output Format
+ Output a single line denoting the minimum value of Σ|A[i]−A[i−1]| for all i.
+ 
+ Sample Output
+ 2
+  
+ Explanation
+ Changing the third element to 2 the array becomes:
+ [2, 2, 2, 2]
+ hence answer = 2.
+----------------------------------------------------------------------------------------
+answere-----deleteoccurrences
+-----------------------------------------------------------
+def deleteOccurrences(N, A, init = True, memo = []):
+    
+    if init:
+        memo = [0] + [-1 for i in range(N)]
+        A.sort(reverse = True)
+        init = False
+    
+    if memo[N] != -1:
+        return memo[N]
+    if N == 0:
+        return 0
+    if N == 1:
+        memo[N] = A[0]
+        return A[0]
+    else:
+        count = 1
+        k = A[0]
+        while A[count] == k:
+            count += 1
+            if count == N:
+                break
+        A = A[count:]
+        if len(A) == 0:
+            memo[N] =  k * count
+            return memo[N]
+            
+        donotdel = deleteOccurrences(len(A), A, init, memo)
+        i = 0
+        while A[i] == k - 1 :
+            del A[i]
+            if i == len(A):
+                break
+        delete = k*count + deleteOccurrences(len(A), A, init, memo)
+        #print(delete)
+        memo[N] =  max(donotdel, delete)
+        return memo[N]
+---------------------------------------------------------------
