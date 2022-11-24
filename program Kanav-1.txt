@@ -1,0 +1,39 @@
+Strings: Count Substrings
+ 
+ Given a string S containing only vowels and consonants, find the number of substrings containing only vowels of the given string with a length of 3.
+ 
+ Note
+ All the letters are in lowercase.
+ It is guaranteed that there are 3 or more characters in the given input string.
+ 
+ Function Description
+ In the provided code snippet, implement the provided countSubstring(...) method using the variables to print the number of substrings in a given string having only vowels in their string (all the characters in substrings are vowels) and substring must have length 3. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ Input Format
+ The first line of input contains a string S.
+ 
+ Sample Input
+ aiuifuie --denotes string S.
+ 
+ Constraints
+ 3<= S.length <500
+-----------------------------------------------------------------------------
+def count_substring(S):
+    result=0
+    #write your Logic here:
+    return result
+#Non editable starts here
+if __name__=="__main__":
+    S = input()
+    print(count_substring(S))
+#Non editable ends here
+-------------------------------------------------------------------------------------------------
+TestCaseTitle			StandardInput			ExpectedOutput
+--------------------------------------------------------------------------------------------------
+Functional Test			euwffyehfbzkuhdsss			0
+Boundary Test			urteoirteoitritw				2
+Exceptional Test			aiuifuie						3
+Validation Test			aeiou						3
+Integrity Test			abcdzui						0
