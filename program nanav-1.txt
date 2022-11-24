@@ -30,10 +30,10 @@ if __name__=="__main__":
     print(count_substring(S))
 #Non editable ends here
 -------------------------------------------------------------------------------------------------
-TestCaseTitle	StandardInput			ExpectedOutput
+TestCaseTitle	    StandardInput			ExpectedOutput
 --------------------------------------------------------------------------------------------------
-Functional Test	euwffyehfbzkuhdsss			0
-Boundary Test	urteoirteoitritw				2
-Exceptional Test	aiuifuie						3
-Validation Test	aeiou						3
-Integrity Test	abcdzui						0
+Functional Test	   euwffyehfbzkuhdsss		 	0
+Boundary Test	     urteoirteoitritw				  2
+  Exceptional      Test	aiuifuie						   3
+Validation          Test	aeiou				     		3
+Integrity           Test	abcdzui						   0
