@@ -1,0 +1,56 @@
+Number of Lights
+ 
+ Joe lives in a locality where he gets disturbed all the time by lights. He plans to design an algorithm so that no one in the locality will get disturbed.
+  i th house won't get disturbed if the lights of the (i-1)th and (i+1)th flats are turned off.
+ Joe gives an array, where the ith value is 1: if the light is on, and if the ith value is 0: the light is off.
+  
+ Write a program to find the minimum number of flats that need to turn their lights off so that no flat gets disturbed.
+  
+ For example: The array is [1,0,1,0,1]. Flat no. 2 and 4 are disturbed since their (i-1)th and (i+1)th lights are on. If we switch off the light of flat no. 2, the new array will be [1,0,0,0,1]; here, no flat is getting disturbed. Hence, the minimum number of flats that need to turn off their lights is 1.
+ 
+ Note
+ A flat will not be disturbed if its lights are already on.
+ 
+ Function Description
+ In the provided code snippet, implement the provided numberOfLights(...) method using the variables to print the minimum number of flats need to turn their lights off so that no flat gets disturbed. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ 
+ Input Format
+ The first line contains the size of the array, N.
+ The next N lines contain array elements (either 0 or 1).
+  
+ Sample Input
+ 5 -- denotes N
+ 0 --
+ 0 --
+ 1 -- denotes N elements
+ 0 --
+ 1 --
+  
+ Output Format
+ Print a single integer denoting the minimum number of flats need to turn their lights off such that no flat gets disturbed.
+  
+ Sample Output
+ 1
+ 
+ Explanation
+ Flat no. 3 or 5 need to turn their lights off, the new array will be [0,0,1,0,0] or [0,0,0,0,1].
+ In both cases, the minimum number of flats is 1.
+ Hence, the output is 1.
+
+---------------------------------------------
+def number_of_lights(N, flats):
+    result = 0 
+    # Write your Logic here: 
+    return result
+if __name__=="__main__":
+    N = int(input())
+    flats = [] 
+    for i in range(N):
+        flats.append(int(input())) 
+    print(number_of_lights(N, flats))
+--------------------------------------------------------------------------------
+
+	
