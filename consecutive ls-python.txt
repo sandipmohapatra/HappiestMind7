@@ -1,0 +1,74 @@
+consecutive 1s
+ ----------------------------------------------------------
+ Write a program to find the maximum number of consecutive 1s in the binary representation of the given decimal number N.
+ 
+ Note
+ Binary is a base-2 number system that uses two states, 0 and 1, to represent a number.
+ The binary representation of 5 is 101.
+ 
+ Function Description
+ In the provided code snippet, implement the provided consecutiveOnes(...) method using the variables to print the maximum number of consecutive 1s in the binary representation. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running, so the Input and Output should match exactly as provided.
+  
+ Input Format
+ The input contains a single integer N.
+ 
+ Sample Input
+ 13 -- denotes N
+  
+ Constraints
+ 1 <= N <= 10^6
+ 
+ Output Format
+ The output contains a single integer denoting the maximum number of consecutive 1s in the binary representation.
+----------------------------------------------------------------------------------------------------
+StandardInput	ExpectedOutput
+260522				7
+914575				5
+13					2
+
+-------------------------------------------------------------------------------------------------------------
+java solution
+----------------------------
+import java.util.*; 
+ import java.lang.*;
+ import java.io.*;
+ import java.lang.Math; 
+ public class Main {
+  public static int ConsecutiveOnes(int N) {  
+  
+  //write your Logic here:
+	  int result=0, countFor1=0,max=1; 
+  String strBinary=Integer.toBinaryString(N);
+  int j=0;
+  
+  
+  for(int i=0;i<strBinary.length()-1;i++)
+  {
+	  
+	  if(strBinary.charAt(i)=='1')
+	    {
+	     for(j=i;strBinary.charAt(j)=='1' && j!=strBinary.length()-1;j++)
+	     {
+	      countFor1++;
+		  }
+	  i=j-1;
+	  if(countFor1>max)
+	  {
+		  max=countFor1;
+		  countFor1=0;
+	  }
+	    }
+	}
+    result=max;
+    return result;
+  }
+  public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  int N = sc.nextInt();  
+  System.out.print(ConsecutiveOnes(N));
+  sc.close();
+  }
+ }
+--------------------------------------------------------------------------------------
