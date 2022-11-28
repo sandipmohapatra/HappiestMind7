@@ -1,0 +1,104 @@
+Tom and Jerry
+ 
+ Tom and Jerry decide to buy some toys with the money they have. All the toys are different, but their cost can be the same.
+ Tom only buys the toys whose cost is even, and Jerry buys the toys whose cost is odd.
+ Find the maximum number of toys Tom and Jerry can buy respectively.
+ 
+ Note
+ Every toy can be bought only once.
+ 
+ Function Description
+ In the provided code snippet, implement the provided tomAndJerry(...) method using the variables to print the maximum number of toys Tom and Jerry can buy respectively. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ Input Format
+ The first line of input contains three space-separated integers N, T, and J denoting the number of toys in the shop, money with Tom, and money with Jerry respectively.
+ The second line of input contains N space-separated integers denoting the cost of the toys.
+ 
+ Sample Input
+ 10 54 75 --denotes N, T, J
+ 12 34 25 32 10 15 20 39 29 30 --denotes cost of N toys
+ 
+ Output Format
+ The output contains two space-separated integers denoting the maximum number of toys Tom and Jerry can buy respectively.
+ 
+ Sample Output
+ 3 3
+ 
+ Explanation
+ Tom can buy toys costing 10, 34, 32, 10, 20, 30.
+ Jerry can buy toys costing 25, 15, 39, 29.
+------------------------------------------------------------------------------------------
+import java.util.*;
+ import java.io.*;
+ import java.lang.Math; 
+ public class Main
+ {
+  public static int[] tomAndJerry(int N, int T, int J, int[] A)
+  { 
+  int result[] = new int[2]; 
+  //write your Logic here: 
+  Arrays.sort(A);
+  //assign total_T and total_J = 0 which keeps track of amount of toys pruchased currently by Tom and Jerry respectively
+  //count_T and count_J = 0 which keeps track of count of toys purchased currently by Tom and Jerry respectively
+  int total_T = 0, total_J = 0,count_T = 0,count_J = 0;
+  //loop the sorted array 
+  for(int i = 0;i<N;i++)
+  {
+      //if price is even
+      if(A[i] % 2 == 0 )
+      { 
+          //if it is less than current amount that Tom has 
+          if(total_T + A[i] <= T)
+          {
+              //add price of toy to total_T
+              total_T = total_T + A[i];
+              //increment count_T
+              count_T = count_T + 1;
+          }
+  
+      }
+
+      else
+      {
+          //if price is odd
+          if(total_J + A[i] <= J)
+          {
+              //if it is less than current amount that Jerry has
+              total_J = total_J + A[i];
+              //increment count
+              count_J = count_J + 1;
+          }
+  
+      }
+  }
+  //0th index stores count of toys purchased by Tom 
+  result[0] = count_T;
+  //0th index stores count of toys purchased by Jerry
+  result[1] = count_J;
+  
+   return result;
+  }
+  public static void main (String[]args)
+  {
+  Scanner sc = new Scanner (System.in); 
+  int N = sc.nextInt ();
+  int T = sc.nextInt ();
+  int J = sc.nextInt (); 
+  int[] A = new int[N];
+  for (int i = 0; i < N; i++)
+  {
+  A[i] = sc.nextInt ();
+  }  
+  sc.close (); 
+  //Declaring an integer array to hold the maximum number of 
+  //toys Tom and Jerry can buy respectively.
+  int[] result=tomAndJerry(N,T,J,A);
+  //Printing the array elements
+  for(int i=0;i<2;i++)
+	  System.out.print(result[i]+" ");
+  //System.out.print(tomAndJerry(N,T,J,A));
+  }
+ }
+-------------------------------------------------------------
