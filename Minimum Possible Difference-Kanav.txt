@@ -135,3 +135,8 @@ import java.util.*;
   System.out.print(strangeProblem(N,A));
   }
  }
+
+---------------------
+"5     2 4 3 1 6"	        3
+"6     2 5 7 88 3 6"	80
+"4     2 2 4 2"	               0
