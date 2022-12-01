@@ -1,0 +1,411 @@
+PL-SQL
+-------------------
+declare
+begin
+end;
+----------------------------------------------
+example 1:
+--------------------------
+declare
+a number:=10;
+b number:=20;
+c number;
+begin
+c:=a+b;
+dbms_output.put_line('The result is :'||c);
+end;
+-----------------------------------------------------------------
+example-2
+--------------------------
+declare
+a number;
+b number;
+c number;
+begin
+a:=:a;
+b:=:b;
+c:=a+b;
+dbms_output.put_line('The result is :'||c);
+end;
+-----------------------------------------------------------------
+example-3
+----------------------
+declare
+a number;
+b number;
+c number;
+begin
+a:=:a;
+b:=:b;
+c:=a+b;
+dbms_output.put_line('The sum of '||a ||' and '||b||' is :'||c);
+end;
+-------------------------------------------------------------------------------
+example-4
+----------------------
+declare
+a number:=10;
+b number:=20;
+begin
+if(a>b)then
+dbms_output.put_line('the greatest is :'||a);
+else 
+dbms_output.put_line('the greatest is :'||b);
+end if;
+end;
+-------------------------------------------------------------------------
+example-5
+--------------------
+declare
+a number;
+b number;
+begin
+a:=:a;
+b:=:b;
+if(a>b)then
+dbms_output.put_line('the greatest is :'||a);
+else 
+dbms_output.put_line('the greatest is :'||b);
+end if;
+end;
+--------------------------------------------------------------
+example-6
+------------------
+declare
+a number;
+b number;
+begin
+a:=:a;
+b:=:b;
+if(a>b)then
+dbms_output.put_line('the greatest is :'||a);
+elsif(a=b)then 
+dbms_output.put_line('the both are equal');
+else
+dbms_output.put_line('the greatest is :'||b);
+end if;
+end;
+------------------------------------------------------------------------
+wap to find the number is even or odd.
+----------------------------------------------------------
+greatest  of 3 nos
+---------------------------
+declare
+a number;
+b number;
+c number;
+begin
+a:=:a;
+b:=:b;
+c:=:c;
+if(a>b and a>c) then
+dbms_output.put_line('the greatest is '||a);
+elsif(b>a and b>c) then
+dbms_output.put_line('the greatest is '||b);
+else
+dbms_output.put_line('the greatest is '||c);
+end if;
+end;
+-----------------------------------------------------------------------
+example-6
+----------------------
+begin
+update emply221 set dept='manager' where empno=101;
+update emply221 set salary=50000 where empno=102;
+insert into emply221 values(105,'Biranchi','dev',45000);
+end;
+
+select * from emply221;
+------------------------------------------------------------------------------
+case ---when
+----------------------------------
+declare 
+a number;
+b number;
+oper varchar2(30);
+begin
+a:=:a;
+b:=:b;
+oper:=:oper;
+case
+when oper='add'
+then dbms_output.put_line('The result is:'||(a+b));
+when oper='sub'
+then dbms_output.put_line('The result is:'||(a-b));
+when oper='mul'
+then dbms_output.put_line('The result is:'||(a*b));
+when oper='div'
+then dbms_output.put_line('The result is:'||(a/b));
+else
+dbms_output.put_line('The operation doesnot exists');
+end case;
+end;
+
+------------------------------------------------
+for loop
+---------------------
+declare
+i number;
+begin
+for i in 1..10 loop
+dbms_output.put_line(i);
+end loop;
+end;
+----------------------------------------------------------------------
+
+declare
+i number;
+begin
+for i in  reverse 1..10 loop
+dbms_output.put_line(i);
+end loop;
+end;
+-----------------------------------------------------------------
+create table circle221(radius number,area number);
+---------------------------------------------------------------------
+declare
+pi constant number:=3.14;
+radius number;
+area number;
+begin
+for radius in 5..10 loop
+area:=pi*power(radius,2);
+insert into circle221 values(radius,area);
+end loop;
+end;
+-------------------------------------------------------------------------
+select * from circle221;
+----------------------------------------------------------
+case -when
+---------------------------
+declare
+grade char(1);
+begin
+grade:=:grade;
+case grade
+when 'A' then dbms_output.put_line('Excellent');
+when 'B' then dbms_output.put_line('Very good');
+when 'C' then dbms_output.put_line('good');
+when 'D' then dbms_output.put_line('Fair');
+else
+ dbms_output.put_line('Excellent');
+end case;
+end;
+--------------------------------------------------------------------------------------------
+declare
+name varchar2(25) not null:='Biranchi';
+surname name%type:='Patra';
+address emply221.name%type:='Bangalore';
+begin
+dbms_output.put_line('the name is :'||name);
+dbms_output.put_line('the surname is :'||surname);
+dbms_output.put_line('the address is'||address);
+end;
+--------------------------------------------------------------------
+declare
+empno emply221.empno%type:=106;
+name emply221.name%type:='Karina';
+dept emply221.dept%type:='Manager';
+salary emply221.salary%type:=76000;
+begin
+dbms_output.put_line('the empno is :'||empno);
+dbms_output.put_line('the name is :'||name);
+dbms_output.put_line('the dept is'||dept);
+dbms_output.put_line('the salary is'||salary);
+insert into emply221 values(empno,name,dept,salary);
+end;
+---------------------------------------------------------------------------------------------
+function:- There are two types of functions.
+------------------------------------------------------------------------------------------------------------
+1)user-defined functions :- user will define and can be used within the program.
+2)pre-defined functions:- math functions,string functions.
+
+A function is a pl-sql block which returns a single value.
+
+example-1:
+-----------------function create-------------------------------------------------
+create or replace function addno(i number,j number) return number is
+begin
+return i+j;
+end;
+
+create or replace function subno(i number,j number) return number is
+begin
+return i-j;
+end;
+
+create or replace function mulno(i number,j number) return number is
+begin
+return i*j;
+end;
+
+create or replace function divno(i number,j number) return number is
+begin
+return i/j;
+end;
+-------------------------function call-------------------------------------------
+
+declare 
+a number;
+b number;
+c number;
+d number;
+begin
+a:=addno(10,20);
+b:=subno(20,10);
+c:=mulno(20,10);
+d:=divno(20,10);
+dbms_output.put_line('The sum is '||a);
+dbms_output.put_line('The sub is '||b);
+dbms_output.put_line('The mul is '||c);
+dbms_output.put_line('The div is '||d);
+end;
+-------------------------------------------------------------------------------------------
+wap to create function for subtract,multiply,divide 2 nos .
+-------------------------------------------------------------------------------------------
+wap to create a function which will return varchar2();
+---------------------------------------------------------------------------------
+create or replace function design11(salary number) return varchar2 is
+begin
+if(salary >=50000) then
+return 'CEO';
+elsif(salary >=40000) then
+return 'Manager';
+elsif(salary >=30000) then
+return 'Officer';
+elsif(salary >=20000) then
+return 'Worker';
+else
+return 'Helper';
+end if;
+end;
+------------------------------------------------------------------------------------------------------------------
+select design(45000) from dual;
+------------------------------------------------------------------
+create table design222(empno number,name varchar2(30),salary number,design varchar2(30));
+--------------------------------------------------------------------------------------------------------------------------
+
+declare
+empno design222.empno%type:=101;
+name design222.name%type:='Karina';
+salary design222.salary%type:=76000;
+design design222.design%type;
+begin
+design:=design11(salary);
+dbms_output.put_line('the empno is :'||empno);
+dbms_output.put_line('the name is :'||name);
+dbms_output.put_line('the design is'||design);
+dbms_output.put_line('the salary is'||salary);
+insert into design222 values(empno,name,salary,design);
+end;
+
+----------------------------------------------------------------------------------------
+
+wap to create a bank transaction
+accno,name,balace,withdraw,deposite,total should be calulated and inserted into a bank221 table.
+------------------------------------------------------------------------------------------------------
+declare 
+accno bank22.accno%type:=101;
+name bank22.name%type:='Biranchi';
+balance bank22.balance%type:=100000;
+withdraw bank22.withdraw%type:=20000;
+deposit bank22.deposit%type:=10000;
+total bank22.total%type:=(balance-withdraw+deposit);
+begin 
+dbms_output.put_line('the accno is :'||accno); 
+dbms_output.put_line('the name is :'||name);
+dbms_output.put_line('the balance is'||balance);
+dbms_output.put_line('the withdraw is'||withdraw); 
+dbms_output.put_line('the deposit is'||deposit);
+dbms_output.put_line('the total is'||total); 
+insert into bank22 values(accno,name,balance,withdraw,deposit,total); 
+end;
+-----------------------------------------------------------------------------------
+
+declare 
+accno bank22.accno%type :=:accno; 
+name bank22.name%type:=:name;
+balance bank22.balance%type:=:balance; 
+withdraw bank22.withdraw%type:=:withdraw;
+deposit bank22.deposit%type:=:deposit;
+total bank22.total%type:=(balance-withdraw+deposit);
+begin dbms_output.put_line('the accno is :'||accno);
+dbms_output.put_line('the name is :'||name);
+dbms_output.put_line('the balance is'||balance); 
+dbms_output.put_line('the withdraw is'||withdraw); 
+dbms_output.put_line('the deposit is'||deposit); 
+dbms_output.put_line('the total is'||total); 
+insert into bank22 values(accno,name,balance,withdraw,deposit,total);
+end;
+--------------------------------------------------------------------------
+create table bank22(accno number not null, name varchar2(30) not null, balance number, withdraw number, deposit number,total number);
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+wap to enter a radius and find the area of the circle using function.
+
+wap to enter a amount and find the simple interset using function.
+si=(p*t*r)/100;
+
+wap to enter a number and find if it is even or odd using function.
+
+* take input from the user dynamically.
+------------------------------------------------
+Procedure
+---------------------------------
+It is a pl-sql block which execute when called but donot return any value.
+
+create or replace procedure delmanager is
+begin
+delete from emply221 where dept='Manager';
+commit;
+end;
+-------------------------------------------
+begin 
+delmanager;
+end;
+--------------------------------------
+select * from emply221
+------------------------------------------------
+example-2
+-----------------------
+create or replace procedure add_no(i number default 0,j number default 0,k number default 0) is
+begin
+dbms_output.put_line('the result is :'||(i+j+k));
+end;
+----------------------------------------------------------------------------------------------------------------
+begin
+add_no(4,5);
+end;
+---------------------------
+example-3
+--------------------
+create table users221(empid number,name char(20),age int,salary int,address char(30));
+--------------------------------------------------------------------------------------------------------
+create or replace procedure insertemp(empid number,name varchar2,age number,salary number,address varchar2)
+is 
+begin
+insert into users221 values(empid,name,age,salary,address);
+end;
+---------------------------------------------------------------------------------------------------------------------------------------
+begin
+insertemp(101,'sandip',33,67000,'bangalore');
+insertemp(102,'kiran',31,57000,'bangalore');
+insertemp(103,'priya',30,77000,'bangalore');
+end;
+
+select * from users221;
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

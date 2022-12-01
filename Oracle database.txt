@@ -1,0 +1,395 @@
+Oracle Database:-
+We have 2 parts in this:-1)SQL 2)PL-SQL
+SQL :-structure querry language.
+PL-SQL :- Programming Language -structure querry language
+In this we can store data in the form of structure having rows and columns.
+--------------------------------------------------------------------------------------------------
+we have datatypes:-
+1)empno is a data:-number is the datatype.
+2)name is a data :- varchar(30)--max limit of 2000 characters,varchar2(30)---max limit is 4000 characters,char(20)---max limit is 2000 characters. 
+3)DOB is a data :- date is the datatype.
+4)documents resume:-long datatype the size is 2gb.
+5)image,vedio :- long raw (binary data(0,1))
+6)Blob :- Binary data
+7)clob :- Character data
+8)money Rs 35000.50 is a data :- data type will be number(17,4)----(99999.99)
+--------------------------------------------------------------------------------------------------------------------
+create a table
+----------------------
+create table mphasis221(empno number,name varchar2(30),salary number(9,2),DOB date,address varchar2(100));
+
+to insert data
+-----------------------
+insert into mphasis221 values(101,'Deepak',50000.75,'01-jan-2010','Bangalore');
+insert into mphasis221(address,DOB,salary,name,empno) values('Pune','07-jun-2011',45000,'sunil',105)
+
+to see the data
+----------------------
+select * from mphasis221;
+select name,salary,dob from mphasis221;
+---------------------------------------------------------------------------------
+
+to check the database name
+-----------------------------------
+select * from global_name;
+---------------------------------------------------------
+Arithmatic operation(+,-,*,/)
+----------------------------------
+select empno,name,salary+1000 as salaryBonus from mphasis221;
+select empno,name,salary-1000 as AfterDonation from mphasis221;
+select empno,name,salary*12 as Annualsalary from mphasis221;
+select empno,name,salary / 30 as perdaysalary from mphasis221;
+---------------------------------------------------------------------------------------
+update the table
+-----------------------------
+update mphasis221 set address='hydrabad' where name='Ashwin';
+---------------------------------------------------------------------------------------------
+add a column to the table 
+------------------------------------------
+alter table mphasis221 add phoneno number
+----------------------------------------------------------------------------------------------------------
+to insert the data into the column
+-----------------------------------------------------------
+update mphasis221 set phoneno=9988776655 where empno=101 ;
+-------------------------------------------------------------------------------------------------------
+
+update mphasis221 set phoneno=9988776655 where empno=102 and name='Ashwin';
+
+update mphasis221 set phoneno=9988776655 where empno in (103,104,105)
+
+---------------------------------------------------------------------------------------------------------------------------
+delete a column
+--------------------------
+alter table mphasis221 drop column phoneno;
+---------------------------------------------------------------------------------
+delete a row
+----------------------
+delete from mphasis221 where empno=105;
+----------------------------------------------------------------------------------------
+project-1
+----------------
+create table student221(rollno number,name varchar2(30),address varchar2(30));
+insert into student221 values(103,'atul','Hydrabad');
+select * from student221;
+add  6 columns phy,chem,maths,total,avg,grade.
+
+alter table student221 add phy number 
+alter table student221 add chem number 
+alter table student221 add math number 
+alter table student221 add total number 
+alter table student221 add grade number 
+alter table student221 add grade varchar2(30) 
+
+--------------------------------------------------------------------------------
+marks update
+---------------------------
+update student221 set phy=56,chem=78,math=77 where rollno=101; 
+update student221 set phy=66,chem=75,math=77 where rollno=102; 
+update student221 set phy=54,chem=72,math=77 where rollno=103; 
+----------------------------------------------------------------------------------------------
+
+calculate total and average
+-------------------------------------
+update student221 set total=phy+chem+math , avg=total / 3 where rollno in(101,102,103);
+
+update student221 set avg=round(avg,2) where rollno in(101,102,103);
+---------------------------------------------------------------------------------------------------------
+insert limited data only
+-------------------------------------
+insert into student221(rollno,name,address) values(104,'biranchi','orissa');
+--------------------------------------------------------------------------------------------------
+Grade calculation
+--------------------------
+update student221 set grade='A' where avg>=70; 
+
+update student221 set grade='B' where avg between 60 and 69.99;
+
+--------------------------------------------------------------------------------------------------------
+truncate table student221; //this will delete all the rows but the table structure will be present .
+---------------------------------------------------------------------------------------------------------------------------------
+desc student221
+
+drop table student221;//table structure will be deleted.
+----------------------Assignment-1---------------------------------------------------------------------------------------
+create a employee table enter 5 rows.
+empno,name,salary,dept,
+if(salary>30k)display---manager
+if(salary>25k)display---worker
+else
+helper
+---------------------------------------------------------------------
+create table employee221(empno number,name varchar2(30),salary number,dept varchar2(30));
+insert into employee221 values(103,'sunil',36000,'dev');
+insert into employee221 values(104,'kiran',26000,'dev');
+
+select * from employee221;
+alter table employee221 add designation varchar2(30)
+update employee221 set designation='manager' where salary between 40000 and 60000;
+update employee221 set designation='worker' where salary between 30000 and 40000;
+update employee221 set designation='helper' where salary between 10000 and 29000;
+
+----------------------------------------------------------------------------------------------------------------------------------
+comparison operator
+----------------------------------
+=(equal to),
+>=(greater than equal to),
+<=(less than equal to)
+>(greater than)
+<(less than)
+!=(not equal to)
+-------------------------------------------------------------------
+select * from mphasis221 where salary=15000.75;
+select * from mphasis221 where salary<15000.75;
+select * from mphasis221 where salary>15000.75;
+select * from mphasis221 where salary>=15000.75;
+select * from mphasis221 where salary<=15000.75;
+select * from mphasis221 where salary!=15000.75;
+-----------------------------------------------------------------------------
+3)between and,not between ,in,not in,like
+-----------------------------------------------------------------
+select * from mphasis221 where salary between 13000 and 16000;
+
+select * from mphasis221 where salary in(14000.75,15000.75); 
+in means the particular salary should match
+
+select * from mphasis221 where salary not between 13000 and 16000;
+except this others will be displayed
+
+select * from mphasis221 where salary not in(14000.75,15000.75); 
+except this others will be displayed
+-------------------------------------------------------------------------------
+like :- 
+select * from mphasis221 where name like 's%';
+starting letter is s and after that any thing.
+-----------------------------------------------------------------------
+select * from mphasis221 where name like 'A%';
+select * from mphasis221 where name like 's%';
+select * from mphasis221 where name like '%l';
+select * from mphasis221 where name like '%l';
+select * from mphasis221 where name like '_t%';
+select * from mphasis221 where salary like '3500%';
+select * from mphasis221 where salary like '3%';
+select * from mphasis221 where salary like '%5';
+select * from mphasis221 where salary like '5%';
+select * from mphasis221 where name like '__u%';
+------------------------------------------------------------------------------
+we can display the records in accending and descending order
+------------------------------------------------------------------------------
+select * from mphasis221 order by name asc;
+select * from mphasis221 order by name;
+select * from mphasis221 order by salary;
+select * from mphasis221 order by name desc;
+select * from mphasis221 order by salary desc;
+------------------------------------------------------------------------------------
+Operations
+--------------------
+1)TL (Transaction language)---select
+2)DML (data manipulation language) :- insert,update, delete
+3)DCL(data control language ):- grant,revoke
+4)DDL(data defination language):- create ,alter,drop
+5)TCL (Transaction control language) :- commit,rollback ,savepoint
+ ---------------------------------------------------------------------------------------------------------
+constraints
+---------------------
+1)primary key:- if we declare a column as primary key we cannot enter duplicate value and we cannot leave the feild empty.
+2)unique key:- if we declare a column as unique key we cannot enter duclicate values.
+3)not null:- if we declare a column as not null we cannot leave that field empty.
+4)check:-we can limit a value of a column.(example:- salary should be greater than 18000);
+5)foreign key:-we can link a table column with another table column which is having primary key.
+------------------------------------------------------------------------------------------------------
+example:-
+
+create table emp221 (empno number primary key,name varchar2(30) not null,email varchar2(30) unique,
+salary number check (salary >18000));
+
+insert into emp221 values(101,'sandip','sandip@gmail.com',19000);
+insert into emp221 values(102,'sandip','sandip123@gmail.com',19000);
+
+select * from emp221;
+-------------------------------------------------------------------------------------------
+bank table accno,name,balace,email 
+------------------------------------------------------
+create table bank221(accno number primary key,name varchar2(30) not null,balance number check(balance > 1000),email varchar2(50) unique);
+
+insert into bank221 values(101,'sandip',1200,'sandip@gmail.com');
+insert into bank221 values(104,'kunal',3500,'kunal@gmail.com');
+
+select * from bank221;
+
+-------------------------------------------------------------------------------------------------------------------------------
+Foreign key:-
+create table transaction(accno number references bank221,trans number,total number)
+-------------------------------------------------------------------------------------------------------------------
+In this bank221 accno is linked with transaction table accno.
+Bank221 is the master table/parent table.
+transaction is the child table.
+we can enter transaction table accno duplicate values but it should be present in the bank221 accno.
+we cannot delete bank221 accno if  the accno is used in the transaction table accno.
+** we cannot make the accno orpfan.
+we have to delete the child table record first and then we can delete the parent record.
+---------------------------------------------------------------------------------------------------------------------------
+Create a employee master table
+empno pk,name,dept,salary
+
+create a designation child table
+empno fk,design,loc
+----------------------------------------------------------------------------------
+create table emply221(empno number primary key,name varchar2(30) not null,dept varchar2(30),salary number);
+
+insert into emply221 values(104,'kiran','dev',35000);
+
+create table design221 (empno number references emply221, design varchar2(30),loc varchar2(30));
+
+insert into design221 values(103,'SR manager','Bangalore');
+
+select a.empno,a.name,a.dept,a.salary,b.design,b.loc from emply221 a,design221 b where a.empno=b.empno;
+---------------------------------------------------------------------------------------------------------------------------------
+
+joining 2 tables
+-----------------------------
+a--->create table bank221(accno number primary key,name varchar2(30) not null,balance number check(balance > 1000),email varchar2(50) unique);
+b--->create table transaction(accno number references bank221,trans number,total number);
+------------------------------------------------------
+select a.accno, a.name, a.balance, a.email, b.trans, b.total from bank221 a, transaction b where a.accno=b.accno;
+
+a is an alias for bank221
+b is an alias for transaction.
+
+-----------------------------------------------------------------------------------------
+Date function
+--------------------------
+It stored in date format in the database.we can add or substract number from date.
+1)select sysdate from dual; 
+2)select last_day(sysdate) from dual;
+dual is a dummy table in oracle.which is used for small calculation.
+3)select months_between('29-mar-2022','29-nov-2021') from dual;
+4)select last_day('02-feb-2022') from dual;
+5)select to_char(sysdate,'Day') from dual;
+6)select to_char(sysdate,'Month') from dual;
+7)select to_char(sysdate,'year') from dual;
+8)select to_char(sysdate,'yyyy') from dual;
+9)select to_char(sysdate,'dd mon yy') from dual;
+10)select to_char(sysdate,'dd month yyyy') from dual;
+11)select to_char(sysdate+1) from dual;
+12)select to_char(sysdate-1) from dual;
+13)select to_char(sysdate,'dd MONTH YYYY HH:MM') from dual;
+------------------------------------------------------
+to_char is used to convert the sysdate  to character format
+date datatype will except :-29-mar-2022
+-------------------------------------------------------------------------------------------------------------------
+group by function
+------------------------------------
+create table dept221(empno number,name varchar2(30),salary number,deptno number);
+
+insert into dept221 values(107,'deepak',23000,20);
+
+select * from dept221;
+
+select count(empno) ,deptno from dept221 group by deptno;
+select sum(salary) ,deptno from dept221 group by deptno;
+select avg(salary) ,deptno from dept221 group by deptno;
+select max(salary) ,deptno from dept221 group by deptno;
+select min(salary) ,deptno from dept221 group by deptno;
+
+select round(avg(salary),2) deptno from dept221 group by deptno;
+--------------------------------------------------------------------------------------------------------------------------------------------
+String function
+----------------------------
+1)select concat('Hello ', ' Students ') from dual;
+combine two strings
+2)select substr('Hello Students ',1,5) from dual;
+part of a string starting from 1 to 5
+3)select length('Hello Students ') from dual;
+length of a string or no of characters present in the string.
+4)select instr('Hello Students ','e') from dual;
+ This will display the first position of e
+5)select lpad('Hello Students',20,'*') from dual;
+6)select rpad('Hello Students',20,'*') from dual;
+It will first create 20 spaces.in that it will put 14 characters and remaining 6 spaces it will put *.
+7)select trim('H' from 'Hello Students') from dual;
+8)select trim('H' from 'Hello StudentsH') from dual;
+It will cut H from both ends. 
+9)select rpad(lpad('hello student',20,'*'),26,'*')from dual;
+10)select trim(' ' from ' Hello StudentsH ') from dual;
+It will delete space from both ends.example:- username/password and bymistake we give space it will delete the header and trailer space.
+----------------------------------------------------------------------
+Arithmatic function
+-------------------------------------
+1)select round(45.34656332,2) from dual;
+if 3rd place it is >=5 then 1 will be added to the second place.
+2)select trunc(45.34656332,2) from dual;
+it will only display till the 2nd place of decimal.
+3)select mod(45,2) from dual;
+It displays the remainder.
+4)select abs(-2) from dual;
+It displays the positive value of a number.
+5)select ceil(2.1) from dual;
+select floor(-12.3) from dual;--------------------(-13)
+select floor(-21.74) from dual;-------------------(-22)
+It displays the next value of the number.
+6)select floor(2.9) from dual;
+It displays the base  value of the number.
+7)select log(100,2) from dual;
+8)select cos(100) from dual;
+9)select sin(100) from dual;
+10)select tan(100) from dual;
+------------------------------------------------------------------------------
+clone a table(to create backup of a table)
+-------------------------------------------------------------------------------
+create table dept222 as select * from dept221;
+insert into dept222 values(108,'biranchi',25000,20)
+
+1)select * from dept222 minus select * from dept221;
+2)select * from dept222 minus select * from dept221;
+3)select * from dept222 union select * from dept221;
+4)select * from dept222 union all select * from dept221;
+5)select * from dept222 intersect select * from dept221;
+-------------------------------------------------------------------------------------------------
+primary key:- we cannot enter duplicate records and we cannot leave the field empty.
+composite key :- it is used to make more than one column as primary key.
+
+create table mphasisstud221
+(empid number not null,
+name varchar2(30) not null,
+address varchar2(20),
+primary key(empid,name),
+unique(empid,address));
+8123777579
+insert into mphasisstud221 values(101,'sandip','Banagalore');
+insert into mphasisstud221 values(101,'sunil','Hyd');
+---------------------------------------------------------------------------------------------------------
+sequence :- The value will automatically increment.example:- accno,rollno,slno..etc.
+
+how to create a sequence.
+step 1:--
+create sequence seq221 increment by 1 start with 1;
+step 2:-
+create table mphasisstud222 (empid number,name varchar2(20),address varchar2(20));
+step 3:-
+insert into mphasisstud222 values(seq221.nextval,'atul','bangalore');
+step 4:-
+select * from mphasisstud222;
+
+select seq221.nextVal from dual;
+select seq221.currVal from dual;
+
+drop sequence seq221;
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
