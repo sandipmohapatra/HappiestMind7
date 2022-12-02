@@ -1,0 +1,135 @@
+ Good Sequence
+
+Alice has been given an array of N elements A[a1, a2, a3, ….., an].
+All the elements in the array are in strictly increasing order.
+Alice can choose elements from that array from left to right and has to make a sequence of length K.
+
+Find the maximum length of the good sequence.
+
+Note
+A sequence is good if the following 2 conditions are satisfied:
+1. The sequence should be strictly increasing, i.e. xi < xi + 1 for each i (1 ≤ i ≤ K - 1).
+2. For each i (1 ≤ i ≤ K - 1), the gcd of two neighbor elements should be greater than 1, i.e., gcd(xi, xi+1) > 1 for every i.
+
+Function Description
+In the provided code snippet, implement the provided goodSequence(...) method to find the maximum length of the good sequence.
+You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”.
+There will be multiple test cases running so the Input and Output should match exactly as provided.
+The base Output variable result is set to a default value of -404 which can be modified. Additionally, you can add or remove these output variables.
+ 
+Input Format
+The first line contains one integer N denoting the size of the array.
+The second line contains N integers of array A viz. a1, a2, ..., an.
+
+Sample Input
+5
+2  3  7  9  10
+
+Constraints
+N ( 2 ≤  N  ≤ 105  )
+Ai ( 1 ≤  A[i]  ≤ 105 )
+
+Output Format
+The output should contain an integer denoting the count of the maximum length of good sequence Alice can obtain.
+
+Sample Output
+2
+
+Explanation
+gcd(2, 3) = 1, not greater than 1.
+​​​​​​​gcd(2, 7) = 1, not greater than 1.
+​​​​​​​gcd(2, 7) = 1, not greater than 1.
+​​​​​​​gcd(2, 10) = 2 > 1.
+Thus, we choose sequence [2, 10]. This is a strictly increasing sequence and gcd(2, 10) = 2 > 1.
+Similarly for 3, 7, 9, we have [3, 9] as the possible answer gcd(3, 9) = 2 > 1.
+So we can obtain a sequence of maximum length 2.
+Hence the answer is 2.
+-------------------------------------------------------
+import java.util.*;
+import java.io.*;
+import java.lang.Math;
+public class Main{
+    public static int goodSequence(int N,int[] A){
+        //write your Logic here:
+    	
+    	/*
+    	 * Creating an 'ArrayList' of sub ArrayLists, where each
+    	 * sub ArrayList represents a sequence created from the array
+    	 *  	 
+    	 *  */
+    	List<List<Integer>>list=new ArrayList<List<Integer>>();
+    	
+    	int gcd=0;
+    	boolean flag=true;
+    	// To store the length of the sequence of maximum length
+    	int maxLen=0;
+    	for (int i = 0; i < (1<<N); i++)
+        {
+    		
+            flag=true;
+            
+            List<Integer>subList=new ArrayList<Integer>();
+            for (int j = 0; j < N; j++)
+            {
+                // (1<<j) is a number with jth bit 1
+                // so when we 'and' them with the
+                // subset number we get which numbers
+                // are present in the subset and which
+                // are not
+                if ((i & (1 << j)) > 0)
+                {
+                    
+                    //Adding the element to the sub ArrayList
+                	subList.add(A[j]);
+                }
+ 
+            
+            }
+            
+            Collections.sort(subList);
+            list.add(subList);
+           
+        }
+        
+        for(List<Integer> subList:list)
+        {
+        	int len=0;
+        	for(int i=0;i<subList.size()-1;i++)
+        	{
+        		int dividend=subList.get(i+1);
+        		int divisor=subList.get(i);
+        		int mod=0;
+        		for(int k=1;k<=dividend && k<=divisor;k++)
+        		{
+        			if(dividend % k==0 && divisor % k==0)
+        				gcd=k;
+        		}
+        		 
+        		 if(gcd==1)
+        		 {
+        			 
+        			 flag=false;
+        			 break;
+        		 }
+        		 else
+        		 {
+        		      
+        	  len=subList.size();
+        	  if(len>maxLen)
+        		  maxLen=len;
+        		 }
+        	}
+        }
+        return maxLen;
+    }
+    public static void main (String[]args){
+        Scanner sc = new Scanner(System.in);
+  int N = sc.nextInt();
+  int[] A = new int[N];
+  for (int i = 0; i < N; i++){
+  A[i] = sc.nextInt();
+  }
+       sc.close();
+       System.out.print(goodSequence(N,A));
+    }
+}

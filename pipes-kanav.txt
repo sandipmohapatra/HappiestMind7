@@ -1,0 +1,97 @@
+"Pipes
+ 
+ Tom has N pipes of heights h1, h2, ..., hN. Let's define an operation on these pipes.
+ In one operation, Tom picks up two different pipes with the smallest heights x and y, and joins them permanently to obtain a pipe of height (x + y). 
+ The cost of this operation is max(x,y). Add the obtained pipe height to the array.
+ Tom performs operations on the given pipes until the heights of all the pipes are strictly greater than H. 
+ You are given the number of pipes N, the heights of the pipes h1, h2, ..., hN, and an integer H. 
+ You need to print the total cost of all the operations performed on the pipes.
+ 
+ Function Description
+ In the provided code snippet, implement the provided maxShows(...) method using the variables to print the total cost of all the operations performed. You can write your code in the space below the phrase “WRITE YOUR LOGIC HERE”. 
+ 
+ There will be multiple test cases running so the Input and Output should match exactly as provided.
+ 
+ 
+ 
+ Input Format
+ The first line contains two space-separated integers N and H.
+ The second line contains N space-separated integers h1, h2, ..., hN.
+ 
+ Sample Input
+ 5 10 -- denotes N & H
+ 7 7 8 9 9 -- denotes N elements
+ 
+ Constraints
+ 1 <= N <= 10
+ 1 <= hi <= 100
+ 1 <= H < h1 + h2 + ... + hN
+ 
+ Output Format
+ The output contains a single integer representing the total cost of all the operations performed.
+ 
+ Sample Output
+ 30
+ 
+ Explanation
+ Initially, the pipes are {7,7,8,9,9}
+ 1) Tom picks the two smallest pipes with heights 7 and 7 and joins them to get a pipe of height 14. The cost of this operation = max(7,7) = 7.
+ The pipes now are {8,9,9,14}
+ 2) Tom picks the two smallest pipes with heights 8 and 9 and joins them to get a pipe of height 17. The cost of this operation = max(8,9) = 9.
+ The pipes now are {9,14,17}
+ 3) Tom picks the two smallest pipes with heights 9 and 14 and joins them to get a pipe of height 23. The cost of this operation = max(9,14) = 14.
+ The pipes now are {17,23}
+ The heights of all the pipes are greater than H = 10. 
+ The total cost of the operations performed = 7 + 9 + 14 = 30."
+
+
+-----------------------------------------------------------------------------
+import java.util.*; 
+ import java.lang.*;
+ import java.io.*;
+ import java.lang.Math; 
+ public class Main {
+  public static int maxShows(int N, int H, int A[]) {  
+  int result=0;  
+  //write your Logic here:  
+  Arrays.sort(A);
+  List<Integer> list = new ArrayList<Integer>();
+  int cost = 0;
+  for(int num:A)
+	  list.add(num);
+  
+  
+  for(int i=0;i<A.length;i++)
+  {
+     if(list.get(0)<H)
+      {
+          int x = list.get(0);
+          int y = list.get(1);
+           cost += Math.max(x, y);
+          int pipe = x + y;
+          
+          list.remove(new Integer(x));
+          list.remove(new Integer(y));
+          list.add(list.size(), pipe);
+          Collections.sort(list);
+
+      }
+
+  }
+  result = cost;
+  
+  
+    return result;
+  }
+  public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  int N = sc.nextInt();
+  int H = sc.nextInt();
+  int A [] = new int[N];
+  for(int i=0; i<N; i++) {
+  A[i] = sc.nextInt();
+  }  
+  System.out.print(maxShows(N,H,A));
+  sc.close();
+  }
+ }
