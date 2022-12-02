@@ -1,0 +1,16 @@
+GROUP BY :----------------
+create table happiestminds(empno number,name varchar2(30),phoneno number,salary number,dept varchar2(30)); 
+
+insert into happiestminds values(101,'akash',8877665544,19000,'dev');
+insert into happiestminds values(102,'aman',9977665544,19000,'dev');
+insert into happiestminds values(103,'ankush',7877665544,39000,'dev');
+
+insert into happiestminds values(104,'anil',8899665544,19000,'testing');
+insert into happiestminds values(105,'pratik',9977665544,19000,'testing');
+insert into happiestminds values(106,'rahul',7877665544,39000,'testing');
+
+select * from happiestminds;
+SELECT COUNT(empno),dept FROM happiestminds GROUP BY dept;
+SELECT MAX(SALARY),dept FROM happiestminds GROUP BY dept;
+
+SELECT ROUND(AVG(SALARY),2),dept FROM happiestminds GROUP BY dept;
